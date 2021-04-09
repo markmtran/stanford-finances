@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Budget from './components/budget/Budget';
+import Faq from './components/faq/Faq';
+import Intro from "./components/intro/Intro";
+import Navbar from './components/nav/Navbar';
+import Resources from './components/resources/Resources';
+import Sankey from './components/sankey/Sankey';
+import Timeline from './components/timeline/Timeline';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const App = () => {
+  return(
+    <div>
+      <Intro />
+      <Navbar />
+      <Budget />
+      <Sankey />
+      <Timeline />
+      <Faq />
+      <Resources />
     </div>
   );
 }
