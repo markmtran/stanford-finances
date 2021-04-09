@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/stanford-finances/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/stanford-finances/static/js/main.3bb70d16.chunk.js",
-    "main.js.map": "/stanford-finances/static/js/main.3bb70d16.chunk.js.map",
-    "runtime-main.js": "/stanford-finances/static/js/runtime-main.48aab11e.js",
-    "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.48aab11e.js.map",
-    "static/js/2.b759e2f9.chunk.js": "/stanford-finances/static/js/2.b759e2f9.chunk.js",
-    "static/js/2.b759e2f9.chunk.js.map": "/stanford-finances/static/js/2.b759e2f9.chunk.js.map",
-    "static/js/3.565e2a3c.chunk.js": "/stanford-finances/static/js/3.565e2a3c.chunk.js",
-    "static/js/3.565e2a3c.chunk.js.map": "/stanford-finances/static/js/3.565e2a3c.chunk.js.map",
+    "main.js": "/stanford-finances/static/js/main.b5034781.chunk.js",
+    "main.js.map": "/stanford-finances/static/js/main.b5034781.chunk.js.map",
+    "runtime-main.js": "/stanford-finances/static/js/runtime-main.7fa667b6.js",
+    "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.7fa667b6.js.map",
+    "static/js/2.e8001d4d.chunk.js": "/stanford-finances/static/js/2.e8001d4d.chunk.js",
+    "static/js/2.e8001d4d.chunk.js.map": "/stanford-finances/static/js/2.e8001d4d.chunk.js.map",
+    "static/js/3.d69b0c08.chunk.js": "/stanford-finances/static/js/3.d69b0c08.chunk.js",
+    "static/js/3.d69b0c08.chunk.js.map": "/stanford-finances/static/js/3.d69b0c08.chunk.js.map",
     "index.html": "/stanford-finances/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/stanford-finances/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.b759e2f9.chunk.js.LICENSE.txt": "/stanford-finances/static/js/2.b759e2f9.chunk.js.LICENSE.txt"
+    "static/js/2.e8001d4d.chunk.js.LICENSE.txt": "/stanford-finances/static/js/2.e8001d4d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.48aab11e.js",
-    "static/js/2.b759e2f9.chunk.js",
+    "static/js/runtime-main.7fa667b6.js",
+    "static/js/2.e8001d4d.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.3bb70d16.chunk.js"
+    "static/js/main.b5034781.chunk.js"
   ]
 }
