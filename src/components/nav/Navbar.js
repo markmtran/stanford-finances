@@ -3,7 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   sticky: {
-    position: "fixed",
+    position: "sticky",
     width: "100%",
   },
   tabLabel: {
