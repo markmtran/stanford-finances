@@ -33,9 +33,9 @@ const Intro = () => {
           </Grid>
         </Grid>
       </AppBar>
-      <div>
+      {/* <div>
         <Typography className={classes.titleText} variant="h3">Understanding Stanford's Finances</Typography>
-      </div>
+      </div> */}
       <img src="https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg" alt="Stanford University at Night" width="100%"/>
     </div>
   )
