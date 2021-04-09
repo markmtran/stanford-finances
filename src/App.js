@@ -1,6 +1,7 @@
 import './App.css';
 import Budget from './components/budget/Budget';
 import Faq from './components/faq/Faq';
+import Footer from './components/footer/Footer';
 import Intro from "./components/intro/Intro";
 import Navbar from './components/nav/Navbar';
 import Resources from './components/resources/Resources';
@@ -18,6 +19,7 @@ const App = () => {
       <Timeline />
       <Faq />
       <Resources />
+      <Footer />
     </div>
   );
 }

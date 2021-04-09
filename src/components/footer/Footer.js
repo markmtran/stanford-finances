@@ -12,17 +12,14 @@ const useStyles = makeStyles({
     marginTop: "5px",
     marginBottom: "5px"
   },
-  titleText: {
+  footerText: {
+    fontSize: "12",
     fontFamily: "Source Sans Pro, sans",
-    color: "white",
-    fontWeight: 100
-  },
-  introDiv: {
-    backgroundImage: 'url("https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg")'
+    textAlign: "end"
   }
 });
 
-const Intro = () => {
+const Footer = () => {
   const classes = useStyles();
 
   return(
@@ -30,19 +27,21 @@ const Intro = () => {
       <AppBar className={classes.appBarStyle} position="static">
         <Grid container className={classes.margins}>
           <Grid item xs="1"/>
-          <Grid item xs="11">
+          <Grid item xs="4">
             <Typography className={classes.stanfordFont} variant="h6" color="inherit">
-              Stanford | Finances
+              Stanford University
             </Typography>
           </Grid>
+          <Grid item xs="6">
+            <Typography className={classes.footerText} color="inherit">
+              @ Stanford University. Stanford, California 94305.
+            </Typography>
+          </Grid>
+          <Grid item xs="1" />
         </Grid>
       </AppBar>
-      {/* <div>
-        <Typography className={classes.titleText} variant="h3">Understanding Stanford's Finances</Typography>
-      </div> */}
-      <img src="https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg" alt="Stanford University at Night" width="100%"/>
     </div>
   )
 }
 
-export default Intro;
+export default Footer;
