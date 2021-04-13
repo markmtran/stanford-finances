@@ -27,7 +27,7 @@ const Intro = () => {
 
   return(
     <div>
-      <AppBar className={classes.appBarStyle} position="static">
+      <AppBar id="intro" className={classes.appBarStyle} position="static">
         <Grid container className={classes.margins}>
           <Grid item xs="1"/>
           <Grid item xs="11">
