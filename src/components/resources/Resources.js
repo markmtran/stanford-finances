@@ -5,7 +5,7 @@ const Resources = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1>Resources</h1>
+        <h1 id="resources">Resources</h1>
       </Grid>
       
       <Grid item xs="2" />
