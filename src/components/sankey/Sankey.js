@@ -1,8 +1,12 @@
 import SankeyDesc from "./SankeyDesc";
+import SankeyGraph from "./SankeyGraph";
 
 const Sankey = () => {
   return(
-    <SankeyDesc />
+    <div>
+      <SankeyDesc />
+      <SankeyGraph />
+    </div>
   );
 }
 

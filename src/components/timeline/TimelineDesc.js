@@ -6,25 +6,15 @@ const TimelineDesc = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 id="timeline">Tipsy Timeline</h1>
+        <h1 id="timeline">The Timeline</h1>
       </Grid>
 
       <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>About</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
-      </Grid>
-
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>More Info</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
+      <Grid item xs="8">
+        <p>Now that you’ve been given a couple perspectives on how stanford’s budget works, 
+          you might be wondering who’s even making these decisions and how you can affect these decisions. 
+          Below you can find a timeline of decisions and who makes them. As mentioned above, 
+          it can get a little convoluted since each school and department has their own way of budgeting and deciding each year.</p>
       </Grid>
     </Grid>
   );

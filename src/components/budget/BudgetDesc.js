@@ -9,21 +9,13 @@ const BudgetDesc = () => {
       </Grid>
       
       <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>About</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
-      </Grid>
-
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>More Info</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
+      <Grid item xs="8">
+        <p>
+          In order to understand Stanford’s finances, 
+          first we have to look at where the money comes from and where it goes. 
+          Below, you can find an interactive chart where you can explore each of Stanford’s main sources of revenue 
+          and a breakdown of how that money gets distributed through the budget plan. 
+        </p>
       </Grid>
     </Grid>
   );

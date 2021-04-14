@@ -5,11 +5,14 @@ body {
 	scroll-behavior: smooth;
 }
 
+/* For scrollspy navbar */
 .current-section {
 	color: black;
 	text-decoration: underline;
 	opacity: 1;
 }
+
+/* Tooltip Animations */
 
 .App {
 	text-align: center;

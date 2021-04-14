@@ -1,8 +1,13 @@
 import BudgetDesc from "./BudgetDesc";
+import BudgetGraphic from "./BudgetGraphic";
 
 const Budget = () => {
   return(
-    <BudgetDesc />
+    <div>
+      <BudgetDesc />
+      <BudgetGraphic />
+    </div>
+    
   );
 }
 
