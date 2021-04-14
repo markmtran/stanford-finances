@@ -6,25 +6,22 @@ const SankeyDesc = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1>Saucy Sankey</h1>
+        <h1 id="sankey">The Student Sankey</h1>
       </Grid>
       
       <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>About</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
+      <Grid container item xs="8" justify="center">
+        <p>
+          But looking at the revenue and budget breakdown is incredibly impersonal. 
+          How does it relate to us as students? What is your giant tuition paying for exactly?
+        </p>
+        <p>
+          Check out the sankey graph below to see the flow of money centered around the student experience. Hover over a section to learn more about it!
+        </p>
       </Grid>
 
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <h2>More Info</h2>
-      </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="10">
-        <p>Lorem ipsum yada yada yada...</p>
+      <Grid container item xs="12" justify="center">
+        <h3>2020-2021 Academic Year</h3>
       </Grid>
     </Grid>
   );
