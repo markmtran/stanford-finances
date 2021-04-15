@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, Typography } from "@material-ui/core";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles({
   accordionStyle: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
 
 const Faq = () => {
   const classes = useStyles();
-  const [expanded, setExpanded] = useState('panel1');
+  const [expanded, setExpanded] = useState();
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -32,7 +33,7 @@ const Faq = () => {
       <Grid item xs="2" />
       <Grid item xs="8">
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-          <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+          <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">Who am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -44,7 +45,7 @@ const Faq = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-          <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">What am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -56,7 +57,7 @@ const Faq = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">Where am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -68,7 +69,7 @@ const Faq = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-          <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
+          <AccordionSummary aria-controls="panel4d-content" id="panel4d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">Why am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -80,7 +81,7 @@ const Faq = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-          <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
+          <AccordionSummary aria-controls="panel5d-content" id="panel5d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">How am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>

@@ -32,17 +32,17 @@ const SankeyGraph = () => {
           loader={<div>Loading Chart</div>}
           data={[
             ['From', 'To', 'Amount', { role: 'tooltip', type: 'string', p: { html: true } }],
-            ['Price per Student (including room and board)', 'The Average Tree', 78165, createTooltip("Price per Student", "Insert description here", "$78,165")],
-            ['Stanford Subsidy', 'The Average Tree', 77643.67, createTooltip("Stanford Subsidy", "Insert description here", "$77,643.67")],
-            ['The Average Tree', 'Financial Aid Costs', 31755.31, createTooltip("Financial Aid Costs", "Insert description here", "$31,755.31")],
-            ['The Average Tree', 'Instutional/Community', 3153.21, createTooltip("Instutional/Community", "Insert description here", "$3,153.21")],
-            ['The Average Tree', 'Instruction/Dept Research', 69624.43, createTooltip("Instruction/Dept Research", "Insert description here", "$69,624.43")],
-            ['The Average Tree', 'Departmental Administration', 19275.27, createTooltip("Departmental Administration", "Insert description here", "$19,275.27")],
-            ['The Average Tree', 'Student Services', 7082.68, createTooltip("Student Services", "Insert description here", "$7,082.68")],
-            ['The Average Tree', 'Library', 7479.56, createTooltip("Library", "Insert description here", "$7,479.56")],
-            ['The Average Tree', 'Facilities O&M Expenses', 7609.43, createTooltip("Facilities O&M Expenses", "Insert description here", "$7,609.43")],
-            ['The Average Tree', 'Depreciation', 4740.75, createTooltip("Depreciation", "Insert description here", "$4,740.75")],
-            ['The Average Tree', 'Administration (G&A)', 5088.03, createTooltip("Administration (G&A)", "Insert description here", "$5,088.03")],
+            ['Price per Student (including room and board)', '', 78165, createTooltip("Price per Student", "Insert description here", "$78,165")],
+            ['Stanford Subsidy', '', 77643.67, createTooltip("Stanford Subsidy", "Insert description here", "$77,643.67")],
+            ['', 'Financial Aid Costs', 31755.31, createTooltip("Financial Aid Costs", "Insert description here", "$31,755.31")],
+            ['', 'Instutional/Community', 3153.21, createTooltip("Instutional/Community", "Insert description here", "$3,153.21")],
+            ['', 'Instruction/Dept Research', 69624.43, createTooltip("Instruction/Dept Research", "Insert description here", "$69,624.43")],
+            ['', 'Departmental Administration', 19275.27, createTooltip("Departmental Administration", "Insert description here", "$19,275.27")],
+            ['', 'Student Services', 7082.68, createTooltip("Student Services", "Insert description here", "$7,082.68")],
+            ['', 'Library', 7479.56, createTooltip("Library", "Insert description here", "$7,479.56")],
+            ['', 'Facilities O&M Expenses', 7609.43, createTooltip("Facilities O&M Expenses", "Insert description here", "$7,609.43")],
+            ['', 'Depreciation', 4740.75, createTooltip("Depreciation", "Insert description here", "$4,740.75")],
+            ['', 'Administration (G&A)', 5088.03, createTooltip("Administration (G&A)", "Insert description here", "$5,088.03")],
           ]}
           options={{
             tooltip: { 
