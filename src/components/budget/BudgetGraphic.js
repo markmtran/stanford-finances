@@ -1,51 +1,65 @@
-import Chart from "react-google-charts";
+import React, { useRef } from "react";
 import { Grid, makeStyles } from "@material-ui/core";
+import rd3 from "react-d3-library";
+import node from "./budgetD3";
 
-const useStyles = makeStyles({
-  center: {
+const RD3Component = rd3.Component;
 
+// const canvasWidth = 1280;
+// const canvasHeight = 2000;
+
+// const budgetCanvas = d3.select("#canvas")
+//   .append("svg")  
+//   .attr("width", canvasWidth)
+//   .attr("height", canvasHeight)
+
+// const centerX = canvasWidth/2;
+
+// const midGraphic = budgetCanvas.append("rect")
+//   .attr("width", 400)
+//   .attr("height", 250)
+//   .attr("fill", "gray")
+//   .attr("x", canvasWidth/2 - 200)
+//   .attr("y", canvasHeight/2 - 125)
+
+// const academicExp = budgetCanvas.append("circle")
+//   .attr("r", 250)
+//   .attr("fill", "blue")
+//   .attr("cx", canvasWidth/2 + 300)
+//   .attr("cy", canvasHeight/2 + 450)
+
+// const auxExp = budgetCanvas.append("circle")
+//   .attr("r", 100)
+//   .attr("fill", "red")
+//   .attr("cx", canvasWidth/2 - 170)
+//   .attr("cy", canvasHeight/2 + 800)
+
+// const adminExp = budgetCanvas.append("circle")
+//   .attr("r", 125)
+//   .attr("fill", "green")
+//   .attr("cx", canvasWidth/2 - 440)
+//   .attr("cy", canvasHeight/2 + 350)
+
+class BudgetGraphic extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
   }
-})
 
-const BudgetGraphic = () => {
-  return(
-    <Grid container justify="center">
-      <Grid item xs={2} />
-      <Grid container item xs={8} justify="center">
-        <Chart
-          width={1000}
-          height={'600px'}
-          chartType="Sankey"
-          loader={<div>Loading Chart</div>}
-          data={[
-            ['From', 'To', 'Weight'],
-            ['What Stanford Covers', 'The Avg Student', 6],
-            ['Avg FinAid', 'The Avg Student', 6],
-            ['Avg Undergrad Tuition', 'The Avg Student', 6],
-            ['The Avg Student', 'FinAid', 2],
-            ['The Avg Student', 'Instutional/Community', 2],
-            ['The Avg Student', 'Instruction/Dept Research', 2],
-            ['The Avg Student', 'Departmental Administration', 2],
-            ['The Avg Student', 'Student Services', 2],
-            ['The Avg Student', 'Library', 2],
-            ['The Avg Student', 'Facilities O&M Expenses', 2],
-            ['The Avg Student', 'Depreciation', 2],
-            ['The Avg Student', 'Administration', 2],
-          ]}
-          options={{
-            animation: {
-              startup: true,
-              easing: 'linear',
-              duration: 1500,
-            },
-            enableInteractivity: false,
-          }}
-          rootProps={{ 'data-testid': '1' }}
-        />
+  componentDidMount() {
+    this.setState({d3: node});
+  }
+
+  render() {
+    return (
+      <Grid container justify="center">
+        <RD3Component data={this.state.d3} />
       </Grid>
-      <Grid item xs={2} />
-    </Grid>
-  )
-}
+    )
+  }
+};
 
-export default BudgetGraphic
+export default BudgetGraphic;
