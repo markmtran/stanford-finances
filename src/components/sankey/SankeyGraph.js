@@ -1,12 +1,6 @@
 import Chart from "react-google-charts";
 import { Grid, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  center: {
-
-  }
-})
-
 const SankeyGraph = () => {
 
   const tooltipStyle = {
