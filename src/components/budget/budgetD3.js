@@ -36,14 +36,14 @@ const academicExpText = academicExp.append("text")
   .attr("y", centerY + 450)
   .text("100%");
 
-academicExp.on("mouseover", () => {
-  academicExpCircle.transition().attr("r", 260);
-  academicExpText.transition().text("Stanford");
-})
-academicExp.on("mouseout", () => {
-  academicExpCircle.transition().attr("r", 250);
-  academicExpText.transition().text("100%");
-})
+// academicExp.on("mouseover", () => {
+//   academicExpCircle.transition().attr("r", 260);
+//   academicExpText.transition().text("Stanford");
+// })
+// academicExp.on("mouseout", () => {
+//   academicExpCircle.transition().attr("r", 250);
+//   academicExpText.transition().text("100%");
+// })
 
 // Full: auxiliary
 const auxExp = budgetCanvas.append("circle")
