@@ -178,11 +178,11 @@ const SankeyGraph2 = () => {
   return(
     <Grid container justify="center">
       <Grid item xs={1} />
-      <Grid item xs={10} style={{height: "700px"}}>
+      <Grid item xs={10} style={{height: "650px"}}>
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 80, left: 140, right: 140}}
+          margin={{ top: 20, bottom: 80, left: 160, right: 160}}
           align="justify"
           colors={{ scheme: 'category10' }}
           nodeOpacity={1}
@@ -198,7 +198,7 @@ const SankeyGraph2 = () => {
           linkTooltip={node => getLinkTooltip(node)}
           linkOpacity={0.5}
           linkHoverOpacity={0.7}
-          linkHoverOthersOpacity={0.1}
+          linkHoverOthersOpacity={0.3}
           enableLinkGradient={true}
           labelPosition="outside"
           labelOrientation="horizontal"
@@ -212,7 +212,7 @@ const SankeyGraph2 = () => {
               itemWidth: 100,
               itemHeight: 14,
               itemDirection: 'top-to-bottom',
-              itemsSpacing: 10,
+              itemsSpacing: 0,
               itemTextColor: '#999',
               symbolSize: 14,
               effects: [

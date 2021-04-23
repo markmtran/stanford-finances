@@ -4,6 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import ScrollSpy from "react-scrollspy";
 
 const useStyles = makeStyles({
+  sticky: {
+    position: "sticky",
+    top: 0
+  },
   noBullet: {
     display: "inline"
   },
@@ -44,6 +48,7 @@ const Navbar = () => {
     //   <Tab label={<a href="#resources" style={defaultStyle}>Resources</a>}/>
     // </Tabs>
     <ScrollSpy   
+      className={classes.sticky}
       style={navStyle}
       items={itemList}
       currentClassName="current-section"
