@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/stanford-finances/static/css/main.4496fe20.chunk.css",
-    "main.js": "/stanford-finances/static/js/main.400d7c0d.chunk.js",
-    "main.js.map": "/stanford-finances/static/js/main.400d7c0d.chunk.js.map",
+    "main.js": "/stanford-finances/static/js/main.d91efe64.chunk.js",
+    "main.js.map": "/stanford-finances/static/js/main.d91efe64.chunk.js.map",
     "runtime-main.js": "/stanford-finances/static/js/runtime-main.8fe5071f.js",
     "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.8fe5071f.js.map",
     "static/js/2.9f576bb2.chunk.js": "/stanford-finances/static/js/2.9f576bb2.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8fe5071f.js",
     "static/js/2.9f576bb2.chunk.js",
     "static/css/main.4496fe20.chunk.css",
-    "static/js/main.400d7c0d.chunk.js"
+    "static/js/main.d91efe64.chunk.js"
   ]
 }
