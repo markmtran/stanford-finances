@@ -26,8 +26,8 @@ const Intro = () => {
   const classes = useStyles();
 
   return(
-    <div>
-      <AppBar id="intro" className={classes.appBarStyle} position="static">
+    <div id="intro">
+      <AppBar  className={classes.appBarStyle} position="static">
         <Grid container className={classes.margins}>
           <Grid item xs="1"/>
           <Grid item xs="11">

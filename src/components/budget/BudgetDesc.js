@@ -5,7 +5,7 @@ const BudgetDesc = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 id="budget">The Big Bad Budget</h1>
+        <h1>The Big Bad Budget</h1>
       </Grid>
       
       <Grid item xs="2" />

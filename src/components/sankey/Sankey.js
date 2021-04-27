@@ -1,13 +1,12 @@
 import SankeyDesc from "./SankeyDesc";
 import SankeyGraph from "./SankeyGraph";
-import SankeyGraph2 from "./SankeyGraph2";
 
 
 const Sankey = () => {
   return(
-    <div>
+    <div id="sankey">
       <SankeyDesc />
-      <SankeyGraph2 />
+      <SankeyGraph />
     </div>
   );
 }
