@@ -52,7 +52,18 @@ body {
 .current-section a:hover::before {
 	width: 100%;
 }
-/* Tooltip Animations */
+
+/* Intro CSS */
+#intro-div {
+	height: 750px;
+	background: linear-gradient(rgba(0, 0, 1, 0), rgba(0, 0, 1, 0.2)),
+		url('https://news-media.stanford.edu/wp-content/uploads/2020/08/19103542/Vision_hero-scaled.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: blur(4px);
+	-webkit-filter: blur(4px);
+}
 
 .App {
 	text-align: center;

@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   appBarStyle: {
-    backgroundColor: "#B1040E"
+    backgroundColor: "#B1040E",
   },
   stanfordFont: {
     fontFamily: "Source Serif Pro, serif"
@@ -13,12 +13,25 @@ const useStyles = makeStyles({
     marginBottom: "5px"
   },
   titleText: {
-    fontFamily: "Source Sans Pro, sans",
+    width: "100%",
+    fontFamily: "Source Serif Pro, serif",
     color: "white",
-    fontWeight: 100
+    fontWeight: "bold",
+    position: "absolute",
+    top: "30%",
+    textShadow: "0 0 30px rgb(0 0 0 / 70%)",
+    textAlign: "center"
+  },
+  descText: {
+    width: "100%",
+    fontFamily: "Source Serif Pro, serif",
+    color: "white",
+    textShadow: "0 0 30px rgb(0 0 0 / 70%)",
+    textAlign: "center"
   },
   introDiv: {
-    backgroundImage: 'url("https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg")'
+    // backgroundImage: 'url("https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg")'
+    backgroundImage: "url('https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg')"
   }
 });
 
@@ -37,10 +50,27 @@ const Intro = () => {
           </Grid>
         </Grid>
       </AppBar>
-      {/* <div>
-        <Typography className={classes.titleText} variant="h3">Understanding Stanford's Finances</Typography>
-      </div> */}
-      <img src="https://www-media.stanford.edu/wp-content/uploads/2017/06/20191526/stanford-share.jpg" alt="Stanford University at Night" width="100%" height="600px"/>
+      <div style={{position: "relative"}}>
+        <div id="intro-div"/>
+        <Typography className={classes.titleText} variant="h2">Understanding Stanford's Finances</Typography>
+        <Grid container style={{position: "absolute", top: "350px"}}>
+          <Grid item xs={12} justify="center">
+            <p className={classes.descText}>
+              Have you ever wondered where your tuition money goes? How does Stanford pay for all those t-shirts? 
+            </p>
+          </Grid>
+          <Grid item xs={12} justify="center">
+            <p className={classes.descText}>
+              Who makes budgeting decisions? And why does Stanford have a giant endowment yet never seems to use it?
+            </p>
+          </Grid>
+          <Grid item xs={12} justify="center">
+            <p className={classes.descText}>
+              In this website, we will attempt to dive into these sorts of questions about Stanford Finances and give some clarity on how Stanford uses its money. 
+            </p>
+          </Grid>
+        </Grid>
+      </div>
     </div>
   )
 }

@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     backgroundColor: "white",
     display: "flex",
     justifyContent: "space-evenly",
-    fontSize: "28px",
+    fontSize: "26px",
     fontWeight: "700",
     zIndex: 100,
   }
