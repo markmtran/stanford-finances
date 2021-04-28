@@ -4,32 +4,54 @@ body {
 }
 
 /* Navbar CSS */
-.current-section {
-	color: #b1040e;
-	font-weight: 900;
-	text-decoration: underline;
-	text-decoration-color: #b1040e;
-	text-decoration-style: solid;
-	text-decoration-thickness: 5px;
+.no-bullet {
+	list-style: none;
+}
+.nav-link {
+	position: relative;
+	color: black;
+	text-decoration: none;
+	opacity: 0.7;
+}
+.nav-link:hover {
+	transition: 1000ms;
 	opacity: 1;
 }
+
 .nav-link::before {
-	transition: 300ms;
+	transition: 500ms;
 	height: 5px;
 	content: '';
 	position: absolute;
-	background-color: #031d44;
+	background-color: #b1040e;
 }
-
 .nav-link-ltr::before {
 	width: 0%;
-	bottom: 10px;
+	bottom: 0;
 }
 
 .nav-link-ltr:hover::before {
 	width: 100%;
 }
-
+.current-section a {
+	transition: 800ms;
+	color: #b1040e;
+	opacity: 1;
+}
+.current-section a::before {
+	transition: 300ms;
+	height: 5px;
+	content: '';
+	position: absolute;
+	background-color: #b1040e;
+}
+.current-section a::before {
+	width: 0%;
+	bottom: 0;
+}
+.current-section a:hover::before {
+	width: 100%;
+}
 /* Tooltip Animations */
 
 .App {

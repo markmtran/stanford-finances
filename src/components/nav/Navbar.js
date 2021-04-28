@@ -11,16 +11,9 @@ const useStyles = makeStyles({
     backgroundColor: "white",
     display: "flex",
     justifyContent: "space-evenly",
-    fontSize: "26px",
+    fontSize: "28px",
     fontWeight: "700",
-  },
-  noBullet: {
-    listStyle: "none",
-  },
-  navLink: {
-    color: "#b1040e",
-    textDecoration: "none",
-    opacity: 1
+    zIndex: 100,
   }
 })
 
@@ -31,17 +24,17 @@ const Navbar = () => {
 
   return(
     <ScrollSpy   
+      id="#nav"
       className={classes.sticky}
       items={itemList}
       currentClassName="current-section"
-      componentTag="p"
     >
-      <li className={classes.noBullet}><a className={classes.navLink} href="#intro" ref={createRef()}>INTRO</a></li>
-      <li className={classes.noBullet}><a className={classes.navLink} href="#budget" ref={createRef()}>BUDGET</a></li>
-      <li className={classes.noBullet}><a className={classes.navLink} href="#sankey" ref={createRef()}>SANKEY</a></li>
-      <li className={classes.noBullet}><a className={classes.navLink} href="#timeline" ref={createRef()}>TIMELINE</a></li>
-      <li className={classes.noBullet}><a className={classes.navLink} href="#faq" ref={createRef()}>FAQ</a></li>
-      <li className={classes.noBullet}><a className={classes.navLink} href="#resources" ref={createRef()}>RESOURCES</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#intro" ref={createRef()}>INTRO</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#budget" ref={createRef()}>BUDGET</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#sankey" ref={createRef()}>SANKEY</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#timeline" ref={createRef()}>TIMELINE</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#faq" ref={createRef()}>FAQ</a></li>
+      <li className="no-bullet"><a className="nav-link nav-link-ltr" href="#resources" ref={createRef()}>RESOURCES</a></li>
     </ScrollSpy>
   )
 }
