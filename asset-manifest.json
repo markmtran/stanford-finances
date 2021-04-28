@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/stanford-finances/static/css/main.e37785dd.chunk.css",
-    "main.js": "/stanford-finances/static/js/main.cfeaf3c6.chunk.js",
-    "main.js.map": "/stanford-finances/static/js/main.cfeaf3c6.chunk.js.map",
+    "main.css": "/stanford-finances/static/css/main.b8e1fa20.chunk.css",
+    "main.js": "/stanford-finances/static/js/main.453c67f8.chunk.js",
+    "main.js.map": "/stanford-finances/static/js/main.453c67f8.chunk.js.map",
     "runtime-main.js": "/stanford-finances/static/js/runtime-main.c512bcd5.js",
     "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.c512bcd5.js.map",
     "static/js/2.c831f489.chunk.js": "/stanford-finances/static/js/2.c831f489.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.984192a3.chunk.js": "/stanford-finances/static/js/3.984192a3.chunk.js",
     "static/js/3.984192a3.chunk.js.map": "/stanford-finances/static/js/3.984192a3.chunk.js.map",
     "index.html": "/stanford-finances/index.html",
-    "static/css/main.e37785dd.chunk.css.map": "/stanford-finances/static/css/main.e37785dd.chunk.css.map",
+    "static/css/main.b8e1fa20.chunk.css.map": "/stanford-finances/static/css/main.b8e1fa20.chunk.css.map",
     "static/js/2.c831f489.chunk.js.LICENSE.txt": "/stanford-finances/static/js/2.c831f489.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c512bcd5.js",
     "static/js/2.c831f489.chunk.js",
-    "static/css/main.e37785dd.chunk.css",
-    "static/js/main.cfeaf3c6.chunk.js"
+    "static/css/main.b8e1fa20.chunk.css",
+    "static/js/main.453c67f8.chunk.js"
   ]
 }
