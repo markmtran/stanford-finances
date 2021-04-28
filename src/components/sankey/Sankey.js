@@ -1,9 +1,10 @@
 import SankeyDesc from "./SankeyDesc";
 import SankeyGraph from "./SankeyGraph";
 
+
 const Sankey = () => {
   return(
-    <div>
+    <div id="sankey">
       <SankeyDesc />
       <SankeyGraph />
     </div>

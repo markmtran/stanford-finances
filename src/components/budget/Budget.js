@@ -3,7 +3,7 @@ import BudgetGraphic from "./BudgetGraphic";
 
 const Budget = () => {
   return(
-    <div>
+    <div id="budget">
       <BudgetDesc />
       <BudgetGraphic />
     </div>

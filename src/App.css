@@ -1,15 +1,33 @@
 html,
 body {
-	width: 100vw;
-	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
-/* For scrollspy navbar */
+/* Navbar CSS */
 .current-section {
-	color: black;
+	color: #b1040e;
+	font-weight: 900;
 	text-decoration: underline;
+	text-decoration-color: #b1040e;
+	text-decoration-style: solid;
+	text-decoration-thickness: 5px;
 	opacity: 1;
+}
+.nav-link::before {
+	transition: 300ms;
+	height: 5px;
+	content: '';
+	position: absolute;
+	background-color: #031d44;
+}
+
+.nav-link-ltr::before {
+	width: 0%;
+	bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+	width: 100%;
 }
 
 /* Tooltip Animations */

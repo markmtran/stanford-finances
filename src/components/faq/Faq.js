@@ -25,10 +25,10 @@ const Faq = () => {
   };
 
   return(
-    <Grid container>
+    <Grid container id="faq">
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 id="faq">FAQ</h1>
+        <h1 >FAQ</h1>
       </Grid>
       <Grid item xs="2" />
       <Grid item xs="8">
