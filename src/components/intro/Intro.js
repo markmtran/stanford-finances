@@ -54,17 +54,17 @@ const Intro = () => {
         <div id="intro-div"/>
         <Typography className={classes.titleText} variant="h2">Understanding Stanford's Finances</Typography>
         <Grid container style={{position: "absolute", top: "350px"}}>
-          <Grid item xs={12} justify="center">
+          <Grid container item xs={12} justify="center">
             <p className={classes.descText}>
               Have you ever wondered where your tuition money goes? How does Stanford pay for all those t-shirts? 
             </p>
           </Grid>
-          <Grid item xs={12} justify="center">
+          <Grid container item xs={12} justify="center">
             <p className={classes.descText}>
               Who makes budgeting decisions? And why does Stanford have a giant endowment yet never seems to use it?
             </p>
           </Grid>
-          <Grid item xs={12} justify="center">
+          <Grid  container item xs={12} justify="center">
             <p className={classes.descText}>
               In this website, we will attempt to dive into these sorts of questions about Stanford Finances and give some clarity on how Stanford uses its money. 
             </p>
