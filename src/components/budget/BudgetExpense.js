@@ -14,17 +14,17 @@ const BudgetExpense = () => {
       {
         name: "Academic Units",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 445.10
       },
       {
         name: "Administrative",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 445.10
       },
       {
         name: "Auxiliary",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 445.10
       }
     ]
   }
@@ -34,11 +34,12 @@ const BudgetExpense = () => {
     //   <div style={{position: "absolute", width: "100%", zIndex: 110}}>
     <div style={{height: 600}}>
       <ResponsiveCirclePacking 
+        leavesOnly
         data={data}
         margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
         id="name"
-        value="loc"
-        colors={{ scheme: 'nivo' }}
+        value="value"
+        colors={{ scheme: 'category10' }}
         childColor={{ from: 'color', modifiers: [ [ 'brighter', 0.4 ] ] }}
         padding={4}
         enableLabels={true}
