@@ -25,7 +25,7 @@ const Navbar = () => {
   return(
     <ScrollSpy   
       id="#nav"
-      className={classes.sticky}
+      className="nav-style hidden-mobile"
       items={itemList}
       currentClassName="current-section"
     >
