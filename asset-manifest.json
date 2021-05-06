@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/stanford-finances/static/css/main.babc9831.chunk.css",
-    "main.js": "/stanford-finances/static/js/main.55068014.chunk.js",
-    "main.js.map": "/stanford-finances/static/js/main.55068014.chunk.js.map",
-    "runtime-main.js": "/stanford-finances/static/js/runtime-main.e00b6ab3.js",
-    "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.e00b6ab3.js.map",
-    "static/js/2.b352893f.chunk.js": "/stanford-finances/static/js/2.b352893f.chunk.js",
-    "static/js/2.b352893f.chunk.js.map": "/stanford-finances/static/js/2.b352893f.chunk.js.map",
-    "static/js/3.d331a0ff.chunk.js": "/stanford-finances/static/js/3.d331a0ff.chunk.js",
-    "static/js/3.d331a0ff.chunk.js.map": "/stanford-finances/static/js/3.d331a0ff.chunk.js.map",
+    "main.css": "/stanford-finances/static/css/main.7e5045ba.chunk.css",
+    "main.js": "/stanford-finances/static/js/main.ddca13e3.chunk.js",
+    "main.js.map": "/stanford-finances/static/js/main.ddca13e3.chunk.js.map",
+    "runtime-main.js": "/stanford-finances/static/js/runtime-main.da97d9ac.js",
+    "runtime-main.js.map": "/stanford-finances/static/js/runtime-main.da97d9ac.js.map",
+    "static/js/2.a5d576cf.chunk.js": "/stanford-finances/static/js/2.a5d576cf.chunk.js",
+    "static/js/2.a5d576cf.chunk.js.map": "/stanford-finances/static/js/2.a5d576cf.chunk.js.map",
+    "static/js/3.a9548ccc.chunk.js": "/stanford-finances/static/js/3.a9548ccc.chunk.js",
+    "static/js/3.a9548ccc.chunk.js.map": "/stanford-finances/static/js/3.a9548ccc.chunk.js.map",
     "index.html": "/stanford-finances/index.html",
-    "static/css/main.babc9831.chunk.css.map": "/stanford-finances/static/css/main.babc9831.chunk.css.map",
-    "static/js/2.b352893f.chunk.js.LICENSE.txt": "/stanford-finances/static/js/2.b352893f.chunk.js.LICENSE.txt"
+    "static/css/main.7e5045ba.chunk.css.map": "/stanford-finances/static/css/main.7e5045ba.chunk.css.map",
+    "static/js/2.a5d576cf.chunk.js.LICENSE.txt": "/stanford-finances/static/js/2.a5d576cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e00b6ab3.js",
-    "static/js/2.b352893f.chunk.js",
-    "static/css/main.babc9831.chunk.css",
-    "static/js/main.55068014.chunk.js"
+    "static/js/runtime-main.da97d9ac.js",
+    "static/js/2.a5d576cf.chunk.js",
+    "static/css/main.7e5045ba.chunk.css",
+    "static/js/main.ddca13e3.chunk.js"
   ]
 }
