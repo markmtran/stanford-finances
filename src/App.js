@@ -1,5 +1,4 @@
 import './App.css';
-import { Grid } from '@material-ui/core';
 import Budget from './components/budget/Budget';
 import Faq from './components/faq/Faq';
 import Footer from './components/footer/Footer';

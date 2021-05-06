@@ -1,6 +1,8 @@
 html,
 body {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
+	height: 100%;
 }
 
 /* Navbar CSS */
@@ -21,10 +23,15 @@ body {
 		display: none;
 	}
 }
-.hamburger-style {
+.hamburger-div {
 	position: sticky;
 	top: 0;
 	z-index: 200;
+}
+#hamburger-menu {
+	position: absolute;
+	top: 5px;
+	right: 15px;
 }
 .hamburger-item {
 	color: black;
@@ -37,6 +44,8 @@ body {
 }
 .no-bullet {
 	list-style: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .nav-link {
 	position: relative;
@@ -94,4 +103,8 @@ body {
 	background-size: cover;
 	filter: blur(4px);
 	-webkit-filter: blur(4px);
+}
+
+.header-margin {
+	margin-top: 65px;
 }

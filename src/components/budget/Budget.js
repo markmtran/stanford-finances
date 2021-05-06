@@ -4,7 +4,7 @@ import BudgetExpense from "./BudgetExpense";
 
 const Budget = () => {
   return(
-    <div id="budget">
+    <div id="budget" >
       <BudgetDesc />
       <BudgetRevenue />
       <BudgetExpense />

@@ -28,10 +28,10 @@ const Faq = () => {
     <Grid container id="faq">
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 >FAQ</h1>
+        <h1 class="header-margin">FAQ</h1>
       </Grid>
-      <Grid item xs="2" />
-      <Grid item xs="8">
+      <Grid item xs="1" md="2"/>
+      <Grid item xs="10" md="8">
         <Accordion className={classes.accordionStyle} square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.question} variant="h5">Who am I?</Typography>
@@ -93,7 +93,7 @@ const Faq = () => {
           </AccordionDetails>
         </Accordion>
       </Grid>
-      <Grid item xs="2" />
+      <Grid item xs="1" md="2" />
     </Grid>
   );
 }

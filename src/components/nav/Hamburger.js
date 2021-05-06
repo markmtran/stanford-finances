@@ -14,8 +14,9 @@ const Hamburger = () => {
   };
 
   return(
-    <div class="hidden-large hamburger-style">
-      <IconButton
+    <div class="hidden-large hamburger-div">
+      <IconButton 
+        id="hamburger-menu"
         edge="end" 
         color="inherit" 
         aria-label="menu"

@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { ResponsiveCirclePacking } from '@nivo/circle-packing';
-import { Grid, makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles({
-
-});
 
 const BudgetExpense = () => {
-  const classes = useStyles();
   const [ zoomedId, setZoomedId ] = useState(null);
 
   const data = {
@@ -15,60 +9,70 @@ const BudgetExpense = () => {
     color: "hsl(124, 70%, 100%)",
     children: [
       {
-        name: "Academic Units",
+        id: "Academic Units",
         color: "hsl(40, 70%, 50%)",
         value: 5250.60
       },
       {
-        name: "Administrative",
+        id: "Administrative",
         color: "hsl(40, 70%, 50%)",
         value: 138.40
       },
       {
-        name: "Auxiliary",
+        id: "Auxiliary",
         color: "hsl(40, 70%, 50%)",
         value: 449.50
       }
     ]
   }
 
+  function getLabel(node) {
+    let percent = node.percentage.toFixed(2);
+    let title = node.id;
+    let desc = "";
+    switch(title) {
+      case "Academic Units":
+        desc = "academic units like"
+        break;
+      case "Administrative":
+        desc = "administrative purposes such as"
+        break;
+      case "Auxiliary":
+        desc = "auxiliary programs like"
+        break;
+      default:
+        break;
+    }
+    return `${percent}% of budget expenses come from ${desc}`;
+  }
+
   return(
-    // <div style={{position: "relative", minHeight: "500px"}}>
-    //   <div style={{position: "absolute", width: "100%", zIndex: 110}}>
     <div style={{height: 700}}>
       <ResponsiveCirclePacking 
         leavesOnly
         margin={{top: 50, bottom: 50}}
         data={data}
-        id="name"
+        id="id"
         value="value"
         valueFormat=">-$0,.2f"
         colors={{ scheme: 'nivo' }}
         colorBy="id"
         childColor={{ from: 'color', modifiers: [ [ 'brighter', 0.4 ] ] }}
-        padding={4}
+        padding={10}
         enableLabels={true}
-        labelsFilter={function(e){return 2===e.node.depth}}
-        labelsSkipRadius={10}
-        labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 2 ] ] }}
+        label={node => getLabel(node)}
+        labelsSkipRadius={230}
+        labelTextColor="white"
         borderWidth={2}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.5 ] ] }}
-        defs={[
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'none',
-                color: 'inherit',
-                rotation: -45,
-                lineWidth: 2,
-                spacing: 4
-            }
-        ]}
-        fill={[ { match: { depth: 1 }, id: 'lines' } ]}
         onClick={ node => {
           setZoomedId(zoomedId === node.id ? null : node.id)
         }}
         zoomedId={zoomedId}
+        theme={{
+          fontFamily: "Source Sans Pro, sans",
+          fontSize: 16,
+        }}
       />
     </div>
   );
