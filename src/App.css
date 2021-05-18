@@ -44,8 +44,8 @@ body {
 }
 .no-bullet {
 	list-style: none;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
 .nav-link {
 	position: relative;
@@ -103,6 +103,29 @@ body {
 	background-size: cover;
 	filter: blur(4px);
 	-webkit-filter: blur(4px);
+}
+
+.intro-title {
+	width: 100%;
+	font-family: 'Source Serif Pro', serif;
+	color: white;
+	font-weight: bold;
+	font-size: 100px;
+	text-shadow: 0 0 30px rgb(0 0 0 / 70%);
+}
+
+@media (max-width: 1100px) {
+	.intro-title {
+		font-size: 70px;
+	}
+}
+
+.intro-desc {
+	position: relative;
+	bottom: 10px;
+	width: 100%;
+	color: white;
+	text-shadow: 0 0 30px rgb(0 0 0 / 70%);
 }
 
 .header-margin {

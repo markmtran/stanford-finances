@@ -28,26 +28,40 @@ const BudgetExpense = () => {
 
   function getLabel(node) {
     let percent = node.percentage.toFixed(2);
-    let title = node.id;
-    let desc = "";
-    switch(title) {
+    return `${percent}%`;
+  }
+
+  function getTooltip(node) {
+    let term = node.id;
+    let amount = node.value.toFixed(2);
+    let examples = "";
+    switch(term) {
       case "Academic Units":
-        desc = "academic units like"
+        examples = "[examples for academic units]"
         break;
       case "Administrative":
-        desc = "administrative purposes such as"
+        examples = "[examples for administrative]"
         break;
       case "Auxiliary":
-        desc = "auxiliary programs like"
+        examples = "[examples for auxiliary]"
         break;
       default:
         break;
     }
-    return `${percent}% of budget expenses come from ${desc}`;
+    return(
+      <div style={{width: 400, 
+                   height: '100%',
+                   backgroundColor: 'white', 
+                   borderRadius: 2, 
+                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)', 
+                   textAlign: 'center',}}>
+        <span><b>{node.id}</b>: <i>${amount}</i> is allocated for things like {examples}.</span>
+      </div>
+    );
   }
 
   return(
-    <div style={{height: 700}}>
+    <div style={{height: 650}}>
       <ResponsiveCirclePacking 
         leavesOnly
         margin={{top: 50, bottom: 50}}
@@ -65,14 +79,13 @@ const BudgetExpense = () => {
         labelTextColor="white"
         borderWidth={2}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.5 ] ] }}
-        onClick={ node => {
-          setZoomedId(zoomedId === node.id ? null : node.id)
-        }}
+        onClick={node => setZoomedId(zoomedId === node.id ? null : node.id)}
         zoomedId={zoomedId}
         theme={{
           fontFamily: "Source Sans Pro, sans",
-          fontSize: 16,
+          fontSize: 100,
         }}
+        tooltip={node => getTooltip(node)}
       />
     </div>
   );

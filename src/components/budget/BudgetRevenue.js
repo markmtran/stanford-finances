@@ -54,39 +54,52 @@ const BudgetRevenue = () => {
 
   function getLabel(node) {
     let percent = node.percentage.toFixed(2);
-    let title = node.id;
-    let desc = "";
-    switch(title) {
+    return `${percent}%`
+  }
+
+  function getTooltip(node) {
+    let term = node.id;
+    let amount = node.value.toFixed(2);
+    let examples = "";
+    switch(term) {
       case "Gifts and Net Assets":
-        desc = "gifts from"
+        examples = "[examples for gifts]"
         break;
       case "University-sponsored Research":
-        desc = "research like"
+        examples = "[examples for usr]"
         break;
       case "Investment Income":
-        desc = "investments made"
+        examples = "[examples for ii]"
         break;
       case "Special Program Fees and Other Income":
-        desc = "special programs like"
+        examples = "[examples for special]"
         break;
       case "Health Care Services":
-        desc = "health care services provided"
+        examples = "[examples for health cs]"
         break;
       case "Student Income":
-        desc = "incomes from students"
+        examples = "[examples for stuincome]"
         break;
       case "SLAC Sponsored Research":
-        desc = "SLAC, which is"
+        examples = "[examples for slac]"
         break;
       default:
         break;
     }
-
-    return `${percent}% of the budget revenue comes from ${desc}`
+    return(
+      <div style={{width: 450, 
+                   height: '100%',
+                   backgroundColor: 'white', 
+                   borderRadius: 2, 
+                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)', 
+                   textAlign: 'center',}}>
+        <span><b>{node.id}</b>: <i>${amount}</i> comes from things like {examples}.</span>
+      </div>
+    );
   }
 
   return(
-    <div style={{height: 700}}>
+    <div style={{height: 650}}>
       <ResponsiveCirclePacking 
         leavesOnly
         margin={{top: 50, bottom: 50}}
@@ -104,14 +117,13 @@ const BudgetRevenue = () => {
         labelTextColor="white"
         borderWidth={2}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.5 ] ] }}
-        onClick={ node => {
-          setZoomedId(zoomedId === node.id ? null : node.id)
-        }}
+        onClick={ node => setZoomedId(zoomedId === node.id ? null : node.id)}
         zoomedId={zoomedId}
         theme={{
           fontFamily: "Source Sans Pro, sans",
-          fontSize: 16,
+          fontSize: 100,
         }}
+        tooltip={node => getTooltip(node)}
       />
     </div>
   );

@@ -210,7 +210,7 @@ const SankeyGraph = () => {
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 130, right: 130}}
+          margin={{ top: 20, bottom: 20, left: 140, right: 140}}
           align="center"
           colors={{ scheme: 'category10' }}
           nodeOpacity={1}
