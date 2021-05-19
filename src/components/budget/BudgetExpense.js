@@ -61,7 +61,7 @@ const BudgetExpense = () => {
   }
 
   return(
-    <div style={{height: 650}}>
+    <div id="budget-expense" style={{height: 600}}>
       <ResponsiveCirclePacking 
         leavesOnly
         margin={{top: 50, bottom: 50}}

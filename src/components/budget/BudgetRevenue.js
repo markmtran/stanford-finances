@@ -99,7 +99,7 @@ const BudgetRevenue = () => {
   }
 
   return(
-    <div style={{height: 650}}>
+    <div id="budget-revenue" style={{height: 600}}>
       <ResponsiveCirclePacking 
         leavesOnly
         margin={{top: 50, bottom: 50}}
