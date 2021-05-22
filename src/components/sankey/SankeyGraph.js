@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ResponsiveSankey } from "@nivo/sankey";
 import { Grid, makeStyles } from "@material-ui/core";
 
@@ -175,14 +176,41 @@ const SankeyGraph = () => {
       </div>
     )
   }
+
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowDimensions;
+  }
+  const { width } = useWindowDimensions();
+  const handleLabelPosition = () => {
+    return width < 750 ? "inside" : "outside";
+  }
+
   return(
-    <Grid container justify="center">
+    <Grid container justify="center" xs={12}>
       <Grid item sm={0} md={1} lg={2}/>
-      <Grid container item sm={12} md={10} lg={8} alignItems="center" style={{height: "600px", minWidth: "700px"}}>
+      <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "600px", minWidth: "700px"}}>
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 130, right: 130}}
+          margin={{ top: 20, bottom: 20, left: 140, right: 140}}
           align="center"
           colors={{ scheme: 'category10' }}
           nodeOpacity={1}
@@ -201,9 +229,9 @@ const SankeyGraph = () => {
           linkHoverOpacity={0.7}
           linkHoverOthersOpacity={0.3}
           enableLinkGradient={true}
-          labelPosition="outside"
+          labelPosition={handleLabelPosition()}
           labelOrientation="horizontal"
-          labelPadding={16}
+          labelPadding={10}
           labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1 ] ] }}
         />
       </Grid>

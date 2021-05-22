@@ -4,10 +4,12 @@ import BudgetExpense from "./BudgetExpense";
 
 const Budget = () => {
   return(
-    <div id="budget">
+    <div id="budget" >
       <BudgetDesc />
-      <BudgetRevenue />
-      <BudgetExpense />
+      <div id="budget-graphic-div">
+        <BudgetRevenue />
+        <BudgetExpense />
+      </div>
     </div>
     
   );

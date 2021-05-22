@@ -7,6 +7,7 @@ import Navbar from './components/nav/Navbar';
 import Resources from './components/resources/Resources';
 import Sankey from './components/sankey/Sankey';
 import Timeline from './components/timeline/Timeline';
+import Hamburger from './components/nav/Hamburger';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <div>
       <Intro />
       <Navbar />
+      <Hamburger />
       <Budget />
       <Sankey />
       <Timeline />

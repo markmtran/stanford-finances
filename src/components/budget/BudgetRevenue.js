@@ -1,84 +1,129 @@
+import { useState } from "react";
 import { ResponsiveCirclePacking } from '@nivo/circle-packing';
-import { Grid, makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles({
-
-});
 
 const BudgetRevenue = () => {
-  const classes = useStyles();
+  const [ zoomedId, setZoomedId ] = useState(null);
+
   const data = {
     name: "Revenues",
-    color: "hsl(124, 70%, 100%)",
     children: [
       {
-        name: "Gifts and Net Assets",
+        id: "Gifts and Net Assets",
+        name: "Gifts and Net Assets include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 445.10,
       },
       {
-        name: "University-sponsored Research",
+        id: "University-sponsored Research",
+        name: "University-sponsored Research include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 1147.00,
       },
       {
-        name: "Investment Income",
+        id: "Investment Income",
+        name: "Investment Income include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 1657.60,
       },
       {
-        name: "Special Program Fees and Other Income",
+        id: "Special Program Fees and Other Income",
+        name: "Special Program Fees and Other Income include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 578.70,
       },
       {
-        name: "Health Care Services",
+        id: "Health Care Services",
+        name: "Health Care Services include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 1423.80,
       },
       {
-        name: "Student Income",
+        id: "Student Income",
+        name: "Student Income include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 1017.60,
       },
       {
-        name: "SLAC Sponsored Research",
+        id: "SLAC Sponsored Research",
+        name: "SLAC Sponsored Research include yada yada yada",
         color: "hsl(40, 70%, 50%)",
-        loc: 90
+        value: 488.40,
       },
     ]
   }
 
+  function getLabel(node) {
+    let percent = node.percentage.toFixed(2);
+    return `${percent}%`
+  }
+
+  function getTooltip(node) {
+    let term = node.id;
+    let amount = node.value.toFixed(2);
+    let examples = "";
+    switch(term) {
+      case "Gifts and Net Assets":
+        examples = "[examples for gifts]"
+        break;
+      case "University-sponsored Research":
+        examples = "[examples for usr]"
+        break;
+      case "Investment Income":
+        examples = "[examples for ii]"
+        break;
+      case "Special Program Fees and Other Income":
+        examples = "[examples for special]"
+        break;
+      case "Health Care Services":
+        examples = "[examples for health cs]"
+        break;
+      case "Student Income":
+        examples = "[examples for stuincome]"
+        break;
+      case "SLAC Sponsored Research":
+        examples = "[examples for slac]"
+        break;
+      default:
+        break;
+    }
+    return(
+      <div style={{width: 450, 
+                   height: '100%',
+                   backgroundColor: 'white', 
+                   borderRadius: 2, 
+                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)', 
+                   textAlign: 'center',}}>
+        <span><b>{node.id}</b>: <i>${amount}</i> comes from things like {examples}.</span>
+      </div>
+    );
+  }
+
   return(
-    // <div style={{position: "relative", minHeight: "500px"}}>
-    //   <div style={{position: "absolute", width: "100%", zIndex: 110}}>
-    <div style={{height: 600}}>
+    <div id="budget-revenue" style={{height: 600}}>
       <ResponsiveCirclePacking 
+        leavesOnly
+        margin={{top: 50, bottom: 50}}
         data={data}
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-        id="name"
-        value="loc"
-        colors={{ scheme: 'nivo' }}
+        id="id"
+        value="value"
+        valueFormat=">-$0,.2f"
+        colors={{ scheme: 'category10' }}
+        colorBy="id"
         childColor={{ from: 'color', modifiers: [ [ 'brighter', 0.4 ] ] }}
-        padding={4}
-        enableLabels={true}
-        labelsFilter={function(e){return 2===e.node.depth}}
-        labelsSkipRadius={10}
-        labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 2 ] ] }}
-        borderWidth={1}
+        padding={10}
+        enableLabels
+        label={node => getLabel(node)}
+        labelsSkipRadius={200}
+        labelTextColor="white"
+        borderWidth={2}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.5 ] ] }}
-        defs={[
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'none',
-                color: 'inherit',
-                rotation: -45,
-                lineWidth: 5,
-                spacing: 8
-            }
-        ]}
-        fill={[ { match: { depth: 1 }, id: 'lines' } ]}
+        onClick={ node => setZoomedId(zoomedId === node.id ? null : node.id)}
+        zoomedId={zoomedId}
+        theme={{
+          fontFamily: "Source Sans Pro, sans",
+          fontSize: 100,
+        }}
+        tooltip={node => getTooltip(node)}
       />
     </div>
   );
