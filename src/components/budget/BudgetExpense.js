@@ -28,7 +28,8 @@ const BudgetExpense = () => {
 
   function getLabel(node) {
     let percent = node.percentage.toFixed(2);
-    return `${percent}%`;
+    //return `${percent}%`;
+    return `<div>hooray</div>`
   }
 
   function getTooltip(node) {
@@ -74,7 +75,8 @@ const BudgetExpense = () => {
         childColor={{ from: 'color', modifiers: [ [ 'brighter', 0.4 ] ] }}
         padding={10}
         enableLabels={true}
-        label={node => getLabel(node)}
+        //label={node => getLabel(node)}
+        label="<div>hooray</div>"
         labelsSkipRadius={230}
         labelTextColor="white"
         borderWidth={2}
