@@ -133,18 +133,18 @@ body {
 }
 
 /** Budget CSS **/
-#budget-graphic-div {
+/* #budget-graphic-div {
 	background-image: url('components/budget/budget-graphic-background.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: auto 1000px;
-}
+} */
 
 /* @media (min-width: 750px) {
 	#budget-expense {
 		margin-top: 250px;
 	}
 } */
-#budget-expense {
+/* #budget-expense {
 	margin-top: 250px;
-}
+} */

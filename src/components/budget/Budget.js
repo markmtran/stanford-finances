@@ -1,6 +1,6 @@
 import BudgetDesc from "./BudgetDesc";
-import BudgetRevenue from "./BudgetRevenue";
-import BudgetExpense from "./BudgetExpense";
+import BudgetRevenue from "./BudgetRevenuePie";
+import BudgetExpense from "./BudgetExpensePie";
 
 const Budget = () => {
   return(
