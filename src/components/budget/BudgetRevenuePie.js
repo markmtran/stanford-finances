@@ -73,7 +73,7 @@ const BudgetRevenue = () => {
     return width < 750 ? false : true;
   }
   const handleMargins = () => {
-    return width < 750 ? 20 : 80
+    return width < 750 ? 40 : 80
   }
 
   function getTooltip(node) {
@@ -110,7 +110,8 @@ const BudgetRevenue = () => {
     return (
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
-                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)'}}>
+                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
+                   width: 350}}>
         <div style={{margin: 8}}>
           <span><b>{title}</b>{desc}</span>
         </div>
@@ -127,6 +128,8 @@ const BudgetRevenue = () => {
         sortByValue
         margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
+        startAngle={70}
+        endAngle={430}
         padAngle={1}
         cornerRadius={1}
         activeOuterRadiusOffset={8}
