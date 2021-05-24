@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ResponsivePie } from '@nivo/pie';
 
 const BudgetExpense = () => {
@@ -22,6 +23,35 @@ const BudgetExpense = () => {
     }
   ]
 
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowDimensions;
+  }
+  const { width } = useWindowDimensions();
+  const handleArcLinkLabels = () => {
+    return width < 750 ? false : true;
+  }
+  const handleMargins = () => {
+    return width < 750 ? 20 : 80
+  }
+
   function getTooltip(node) {
     let title = node.datum.id;
     let desc = "";
@@ -39,12 +69,14 @@ const BudgetExpense = () => {
         break;
     }
 
+    title = width < 750 ? node.datum.id + ": " : "";
+
     return (
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)'}}>
         <div style={{margin: 8}}>
-          <span >{desc}</span>
+          <span><b>{title}</b>{desc}</span>
         </div>
       </div>
     )
@@ -56,7 +88,7 @@ const BudgetExpense = () => {
         data={data}
         // valueFormat={value => `$${value.toLocaleString() + '0'}`}
         valueFormat='>-$0,.2f'
-        margin={{ top: 50, bottom: 50, right: 80, left: 80 }}
+        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={-200}
         endAngle={160}
@@ -66,6 +98,7 @@ const BudgetExpense = () => {
         colors={{ scheme: 'set2' }}
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
+        enableArcLinkLabels={handleArcLinkLabels()}
         arcLinkLabelsSkipAngle={0}
         arcLinkLabelsTextColor="#333333"
         arcLinkLabelsThickness={2}
@@ -75,6 +108,7 @@ const BudgetExpense = () => {
         theme={{
           fontFamily: "Source Sans Pro, sans",
           fontSize: 18,
+          textColor: 'black'
         }}
         tooltip={node => getTooltip(node)}
       />

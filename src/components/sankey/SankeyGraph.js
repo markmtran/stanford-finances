@@ -210,7 +210,7 @@ const SankeyGraph = () => {
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 140, right: 140}}
+          margin={{ top: 20, bottom: 20, left: 160, right: 160}}
           align="center"
           colors={{ scheme: 'category10' }}
           nodeOpacity={1}
@@ -233,6 +233,10 @@ const SankeyGraph = () => {
           labelOrientation="horizontal"
           labelPadding={10}
           labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1 ] ] }}
+          theme={{
+            fontFamily: "Source Sans Pro, sans",
+            fontSize: 12,
+          }}
         />
       </Grid>
       <Grid item sm={0} md={1} lg={2}/>

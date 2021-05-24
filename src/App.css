@@ -132,13 +132,13 @@ body {
 	margin-top: 65px;
 }
 
-/** Budget CSS **/
-/* #budget-graphic-div {
+/* Budget CSS */
+#budget-graphic-div {
 	background-image: url('components/budget/budget-graphic-background.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: auto 1000px;
-} */
+}
 
 /* @media (min-width: 750px) {
 	#budget-expense {
@@ -148,3 +148,10 @@ body {
 /* #budget-expense {
 	margin-top: 250px;
 } */
+
+/* FAQ CSS */
+.faq-answer {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+}

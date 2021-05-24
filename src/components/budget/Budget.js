@@ -8,6 +8,7 @@ const Budget = () => {
       <BudgetDesc />
       <div id="budget-graphic-div">
         <BudgetRevenue />
+        <div style={{height: 300}} />
         <BudgetExpense />
       </div>
     </div>
