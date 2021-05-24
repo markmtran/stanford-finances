@@ -49,7 +49,7 @@ const BudgetExpense = () => {
     return width < 750 ? false : true;
   }
   const handleMargins = () => {
-    return width < 750 ? 40 : 80
+    return width < 750 ? 40 : 120
   }
 
   function getTooltip(node) {
@@ -75,7 +75,7 @@ const BudgetExpense = () => {
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
-                   width: 350}}>
+                   width: 300}}>
         <div style={{margin: 8}}>
           <span><b>{title}</b>{desc}</span>
         </div>
