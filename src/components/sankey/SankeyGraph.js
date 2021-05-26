@@ -205,12 +205,15 @@ const SankeyGraph = () => {
 
   return(
     <Grid container justify="center" xs={12}>
+      <Grid container item xs="12" justify="center">
+        <h3 class="graphic-margin">2020-2021 Academic Year</h3>
+      </Grid>
       <Grid item sm={0} md={1} lg={2}/>
-      <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "600px", minWidth: "700px"}}>
+      <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "500px", minWidth: "700px"}}>
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 160, right: 160}}
+          margin={{ top: 20, bottom: 20, left: 150, right: 150}}
           align="center"
           colors={{ scheme: 'category10' }}
           nodeOpacity={1}

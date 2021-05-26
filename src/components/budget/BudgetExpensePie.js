@@ -49,7 +49,7 @@ const BudgetExpense = () => {
     return width < 750 ? false : true;
   }
   const handleMargins = () => {
-    return width < 750 ? 40 : 120
+    return width < 750 ? 40 : 200
   }
 
   function getTooltip(node) {
@@ -84,7 +84,7 @@ const BudgetExpense = () => {
   }
   
   return(
-    <div style={{height: 600}}>
+    <div style={{height: 500}}>
       <ResponsivePie
         data={data}
         // valueFormat={value => `$${value.toLocaleString() + '0'}`}

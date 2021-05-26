@@ -20,10 +20,6 @@ const SankeyDesc = () => {
         </p>
       </Grid>
       <Grid item xs="1" md="2"/>
-
-      <Grid container item xs="12" justify="center">
-        <h3>2020-2021 Academic Year</h3>
-      </Grid>
     </Grid>
   );
 }

@@ -14,7 +14,7 @@ body {
 	background-color: white;
 	display: flex;
 	justify-content: space-evenly;
-	font-size: 26px;
+	font-size: 22px;
 	font-weight: 700;
 	z-index: 100;
 }
@@ -129,7 +129,11 @@ body {
 }
 
 .header-margin {
-	margin-top: 65px;
+	margin-top: 60px;
+}
+
+.graphic-margin {
+	margin-top: 60px;
 }
 
 /* Budget CSS */
@@ -138,6 +142,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: auto 1000px;
+	margin-top: 60px;
 }
 
 /* @media (min-width: 750px) {

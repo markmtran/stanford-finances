@@ -4,27 +4,16 @@ import { ResponsivePie } from '@nivo/pie';
 const BudgetRevenue = () => {
   const data = [
     {
-      "id": "Gifts and Net Assets",
-      "label": "Gifts and Net Assets",
-      "value": 445.10,
-      "color": "hsl(294, 70%, 50%)"
-    },
-    {
       "id": "University-sponsored Research",
       "label": "University-sponsored Research",
       "value": 1147.00,
       "color": "hsl(304, 70%, 50%)"
     },
+
     {
       "id": "Investment Income",
       "label": "Investment Income",
       "value": 1657.60,
-      "color": "hsl(218, 70%, 50%)"
-    },
-    {
-      "id": "Special Program Fees and Other Income",
-      "label": "Special Program Fees and Other Income",
-      "value": 578.70,
       "color": "hsl(218, 70%, 50%)"
     },
     {
@@ -44,7 +33,19 @@ const BudgetRevenue = () => {
       "label": "SLAC Sponsored Research",
       "value": 488.40,
       "color": "hsl(67, 70%, 50%)"
-    }
+    },
+    {
+      "id": "Special Program Fees & Other Income",
+      "label": "Special Program Fees & Other Income",
+      "value": 578.70,
+      "color": "hsl(218, 70%, 50%)"
+    },
+    {
+      "id": "Gifts & Net Assets",
+      "label": "Gifts & Net Assets",
+      "value": 445.10,
+      "color": "hsl(294, 70%, 50%)"
+    },
   ]
 
   function getWindowDimensions() {
@@ -73,14 +74,14 @@ const BudgetRevenue = () => {
     return width < 750 ? false : true;
   }
   const handleMargins = () => {
-    return width < 750 ? 40 : 120
+    return width < 750 ? 40 : 200
   }
 
   function getTooltip(node) {
     let title = node.datum.id;
     let desc = "";
     switch(title) {
-      case "Gifts and Net Assets":
+      case "Gifts & Net Assets":
         desc = "gna description";
         break;
       case "University-sponsored Research":
@@ -89,7 +90,7 @@ const BudgetRevenue = () => {
       case "Investment Income":
         desc = "invest description";
         break;
-      case "Special Program Fees and Other Income":
+      case "Special Program Fees & Other Income":
         desc = "spfoi description";
         break;
       case "Health Care Services":
@@ -120,16 +121,16 @@ const BudgetRevenue = () => {
   }
   
   return(
-    <div style={{height: 600}}>
+    <div style={{height: 500}}>
       <ResponsivePie
         data={data}
+        sortByValue
         // valueFormat={value => `$${value.toLocaleString() + '0'}`}
         valueFormat='>-$0,.2f'
-        sortByValue
         margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
-        startAngle={70}
-        endAngle={430}
+        startAngle={30}
+        endAngle={390}
         padAngle={1}
         cornerRadius={1}
         activeOuterRadiusOffset={8}
