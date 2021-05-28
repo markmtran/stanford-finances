@@ -25,16 +25,16 @@ const Intro = () => {
   }
   function useWindowDimensions() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-  
+
     useEffect(() => {
       function handleResize() {
         setWindowDimensions(getWindowDimensions());
       }
-  
+
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
-  
+
     return windowDimensions;
   }
   const { width } = useWindowDimensions();
@@ -42,13 +42,13 @@ const Intro = () => {
     return width < 750 ? true : false;
   }
 
-  return(
+  return (
     <div id="intro">
       <Header />
-      <Snackbar 
-        anchorOrigin={{vertical, horizontal}} 
-        open={showAlert()} 
-        autoHideDuration={10000} 
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={showAlert()}
+        autoHideDuration={10000}
         onClose={handleClose}
         key={vertical + horizontal}
       >
@@ -57,8 +57,8 @@ const Intro = () => {
           For a better viewing experience, turn your mobile device horizontally to a portrait position.
         </Alert>
       </Snackbar>
-      <div style={{position: "relative"}}>
-        <div id="intro-div"/>
+      <div style={{ position: "relative" }}>
+        <div id="intro-div" />
         <IntroDesc />
       </div>
     </div>

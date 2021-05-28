@@ -96,7 +96,7 @@ const BudgetExpense = () => {
         padAngle={1}
         cornerRadius={1}
         activeOuterRadiusOffset={8}
-        colors={{ scheme: 'set2' }}
+        colors={{ datum: 'data.color' }}
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
         enableArcLinkLabels={handleArcLinkLabels()}

@@ -20,12 +20,14 @@ const SankeyGraph = () => {
     "nodes": [
       {
         "id": "Price per Student",
+        "nodeColor": '#1303fc'
       },
       {
         "id": "Stanford Subsidy",
       },
       {
         "id": "",
+        "nodeColor": '#abcdef'
       },
       {
         "id": "Instruct/Dept Research",
@@ -59,57 +61,68 @@ const SankeyGraph = () => {
       {
         "source": "Price per Student",
         "target": "",
-        "value": 78165.00
+        "value": 78165.00,
+        "nodeColor": "#000000"
       },
       {
         "source": "Stanford Subsidy",
         "target": "",
-        "value": 77643.67
+        "value": 77643.67,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Instruct/Dept Research",
-        "value": 69624.43
+        "value": 69624.43,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "FinAid Costs",
-        "value": 31755.31
+        "value": 31755.31,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Dep't Administration",
-        "value": 19275.27
+        "value": 19275.27,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Facilities O&M",
-        "value": 7609.43
+        "value": 7609.43,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Library",
-        "value": 7479.56
+        "value": 7479.56,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Student Services",
-        "value": 7082.68
+        "value": 7082.68,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Administration (G&A)",
-        "value": 5088.03
+        "value": 5088.03,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Depreciation",
-        "value": 4740.75
+        "value": 4740.75,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Institutional/Community",
-        "value": 3153.21
+        "value": 3153.21,
+        "nodeColor": "#000000"
       }
     ]
   }
@@ -215,7 +228,7 @@ const SankeyGraph = () => {
           sort="descending"
           margin={{ top: 20, bottom: 20, left: 150, right: 150}}
           align="center"
-          colors={{ scheme: 'category10' }}
+          colors={node => node.nodeColor}
           nodeOpacity={1}
           nodeThickness={18}
           nodeInnerPadding={3}
