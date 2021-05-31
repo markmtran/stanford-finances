@@ -2,15 +2,15 @@ import { Grid, Typography } from "@material-ui/core";
 
 const IntroDesc = () => {
   return (
-    <Grid container xs={12} style={{position: "absolute", top: 40}} justify="center" alignItems="center">
+    <Grid container xs={12} style={{position: "absolute", top: 0}} justify="center" alignItems="center">
       <Grid item xs={1} sm={1} md={1} lg={2}/>
       <Grid item xs={10} sm={10} md={10} lg={8}>
-        <Typography class="intro-title" variant="h1">Understanding Stanford's Finances</Typography>
+        <Typography class="intro-title" variant="h2">Stanford's Finances</Typography>
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={2}/>
 
       <Grid item xs={1} sm={1} md={1} lg={2}/>
-      <Grid container item xs={10} sm={10} md={10} lg={8} style={{position: "relative", bottom: 30}}>
+      <Grid container item xs={10} sm={10} md={10} lg={8} style={{position: "relative", bottom: 50}}>
         <Grid item xs={12}>
           <p class="intro-desc">
             Have you ever wondered where your tuition money goes? How does Stanford pay for all those t-shirts? <br/><br/>

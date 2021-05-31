@@ -27,7 +27,7 @@ const Budget = () => {
   }
   const { width } = useWindowDimensions();
   const divHeight = () => {
-    return width < 750 ? 200 : 300;
+    return width < 750 ? 150 : 200;
   }
 
   return(

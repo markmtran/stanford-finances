@@ -45,7 +45,7 @@ const Intro = () => {
   return (
     <div id="intro">
       <Header />
-      <Snackbar
+      {/* <Snackbar
         anchorOrigin={{ vertical, horizontal }}
         open={showAlert()}
         autoHideDuration={10000}
@@ -54,9 +54,9 @@ const Intro = () => {
       >
         <Alert onClose={handleClose} severity="info">
           <AlertTitle>Mobile Devices</AlertTitle>
-          For a better viewing experience, turn your mobile device horizontally to a portrait position.
+          For a better viewing experience, turn your mobile device horizontally to a landscape position.
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
       <div style={{ position: "relative" }}>
         <div id="intro-div" />
         <IntroDesc />

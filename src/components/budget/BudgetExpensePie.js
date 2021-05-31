@@ -7,19 +7,19 @@ const BudgetExpense = () => {
       "id": "Academic Units",
       "label": "Academic Units",
       "value": 5250.60,
-      "color": "hsl(294, 70%, 50%)"
+      "color": "#B3C274"
     },
     {
       "id": "Administrative",
       "label": "Administrative",
       "value": 138.40,
-      "color": "hsl(304, 70%, 50%)"
+      "color": "#7BB261"
     },
     {
       "id": "Auxiliary",
       "label": "Auxiliary",
       "value": 449.50,
-      "color": "hsl(218, 70%, 50%)"
+      "color": "#5E9968"
     }
   ]
 
@@ -57,13 +57,13 @@ const BudgetExpense = () => {
     let desc = "";
     switch(title) {
       case "Academic Units":
-        desc = "Academic Units description";
+        desc = "This budget item is all of the divisions at Stanford that focus directly on education. It includes the different schools (Law, Engineering, etc.), research institutes (e.g. SLAC and Hoover), academic support divisions (e.g. Vice Provost for the Arts and Vice Provost for Undergraduate Education), and the libraries.";
         break;
       case "Administrative":
-        desc = "Administrative description";
+        desc = "This budget item includes all of the divisions at Stanford necessary for the institution to function but aren’t directly involved in the academic mission. It includes everything from the General Counsel’s Office to Student Affairs to The President and Provost’s Offices. ";
         break;
       case "Auxiliary":
-        desc = "Auxiliary description";
+        desc = "This budget item consists of Athletics and Residential & Dining Enterprises. In normal years (i.e. non-COVID) bothBoth of these auxiliaries function as (nearly) self-sustaining operations which provide important services for the university.";
         break;
       default:
         break;
@@ -75,8 +75,9 @@ const BudgetExpense = () => {
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
-                   width: 300}}>
-        <div style={{margin: 8}}>
+                   width: 350,
+                   fontSize: 16}}>
+        <div style={{margin: 10}}>
           <span><b>{title}</b>{desc}</span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 html,
 body {
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 	height: 100%;
 }
 
@@ -95,9 +95,9 @@ body {
 
 /* Intro CSS */
 #intro-div {
-	height: 750px;
+	height: 600px;
 	background: linear-gradient(rgba(0, 0, 1, 0), rgba(0, 0, 1, 0.2)),
-		url('https://news-media.stanford.edu/wp-content/uploads/2020/08/19103542/Vision_hero-scaled.jpg');
+		url('./stanfordPic.JPG');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -110,7 +110,7 @@ body {
 	font-family: 'Source Serif Pro', serif;
 	color: white;
 	font-weight: bold;
-	font-size: 100px;
+	font-size: 90px;
 	text-shadow: 0 0 30px rgb(0 0 0 / 70%);
 }
 
@@ -141,7 +141,7 @@ body {
 	background-image: url('components/budget/budget-graphic-background.png');
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto 1000px;
+	background-size: auto 700px;
 	margin-top: 60px;
 }
 

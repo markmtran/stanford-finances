@@ -3,12 +3,6 @@ import { ResponsiveSankey } from "@nivo/sankey";
 import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
-  tipHeader: {
-    fontWeight: "bold"
-  },
-  tipDesc: {
-
-  },
   nodeStyle: {
     fontWeight: "bold"
   }
@@ -19,30 +13,34 @@ const SankeyGraph = () => {
   const data = {
     "nodes": [
       {
-        "id": "Price per Student",
+        "id": "Average Undergraduate Tuition",
         "nodeColor": '#1303fc'
       },
       {
-        "id": "Stanford Subsidy",
+        "id": "Average Financial Aid Provided by Stanford",
+        "nodeColor": '#1303fc'
+      },
+      {
+        "id": "What Stanford Covers",
       },
       {
         "id": "",
         "nodeColor": '#abcdef'
       },
       {
-        "id": "Instruct/Dept Research",
+        "id": "Instruction/Dep't Research",
       },
       {
-        "id": "FinAid Costs",
+        "id": "Financial Aid Costs",
       },
       {
-        "id": "Dep't Administration",
+        "id": "Departmental Administration",
       },
       {
         "id": "Library",
       },
       {
-        "id": "Facilities O&M",
+        "id": "Facilities O&M Expenses",
       },
       {
         "id": "Student Services",
@@ -59,38 +57,44 @@ const SankeyGraph = () => {
     ],
     "links": [
       {
-        "source": "Price per Student",
+        "source": "Average Undergraduate Tuition",
         "target": "",
-        "value": 78165.00,
+        "value": 39082.50,
         "nodeColor": "#000000"
       },
       {
-        "source": "Stanford Subsidy",
+        "source": "Average Financial Aid Provided by Stanford",
+        "target": "",
+        "value": 39082.50,
+        "nodeColor": "#000000"
+      },
+      {
+        "source": "What Stanford Covers",
         "target": "",
         "value": 77643.67,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Instruct/Dept Research",
+        "target": "Instruction/Dep't Research",
         "value": 69624.43,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "FinAid Costs",
+        "target": "Financial Aid Costs",
         "value": 31755.31,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Dep't Administration",
+        "target": "Departmental Administration",
         "value": 19275.27,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Facilities O&M",
+        "target": "Facilities O&M Expenses",
         "value": 7609.43,
         "nodeColor": "#000000"
       },
@@ -130,52 +134,56 @@ const SankeyGraph = () => {
     let desc = "";
     let val = "";
     switch(node.source.label) {
-      case "Price per Student":
-        desc = "pps description";
-        val = "$78,165.00"
+      case "Average Undergraduate Tuition":
+        desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
+        val = "$39,082.50"
         break;
-      case "Stanford Subsidy":
-        desc = "ss description";
+      case "Average Financial Aid Provided by Stanford":
+        desc = "This category is the average amount of financial aid per student. ";
+        val = "$39,082.50"
+        break;
+      case "What Stanford Covers":
+        desc = "This category is the amount Stanford ends up paying over and above what students pay for their own education. This is the indirect subsidy Stanford pays.";
         val = "$77,643.67"
         break;
       default:
         break;
     }
     switch(node.target.label) {
-      case "Instruct/Dept Research":
-        desc = "I/D research description";
+      case "Instruction/Dep't Research":
+        desc = "This category includes the direct costs of research and teaching and consists of pay for faculty, lecturers, and research staff and other research and teaching related expenses. ";
         val = "$69,624.43"
         break;
-      case "FinAid Costs":
-        desc = "FA description";
+      case "Financial Aid Costs":
+        desc = "This category is money Stanford spends on financial aid (does not include external financial aid).";
         val = "$31,755.31"
         break;
-      case "Dep't Administration":
-        desc = "DA description";
+      case "Departmental Administration":
+        desc = "This category includes the costs of running departments like the departmental administrators. ";
         val = "$19,275.27"
         break;
       case "Library":
-        desc = "library description";
+        desc = "This category includes the costs of running the library. ";
         val = "$7,479.56"
         break;
-      case "Facilities O&M":
-        desc = "fom description";
+      case "Facilities O&M Expenses":
+        desc = "This category is the amount spent to keep the physical buildings at Stanford up and running.";
         val = "$7,609.43"
         break;
       case "Student Services":
-        desc = "stuserv description";
+        desc = "This category includes admissions, academic advising, career planning, and other non-academic directly student facing services.";
         val = "$7,082.68"
         break;
       case "Administration (G&A)":
-        desc = "admin g&a description";
+        desc = "This category includes all of the general costs that go into running a large institution like HR, legal counsel, IT, etc.";
         val = "$5,088.03"
         break;
       case "Depreciation":
-        desc = "dep description";
+        desc = "This category reflects the general decline in value that comes from the wear and tear on Stanford’s buildings and other assets.";
         val = "$4,740.75"
         break;
       case "Institutional/Community":
-        desc = "I/C description";
+        desc = "This category is a catch all that includes things like Haas, Vaden, and the Community Centers.";
         val = "$3,153.21"
         break;
       default:
@@ -183,9 +191,17 @@ const SankeyGraph = () => {
     }
     
     return (
-      <div>
-        <span className={classes.tipHeader}>{val}</span><br />
-        <span className={classes.tipDesc}>{desc}</span>
+      <div style={{
+        backgroundColor: 'white',
+        borderRadius: 2,
+        width: 350,
+        fontSize: 16,
+        overflowWrap: 'break-word',
+        whiteSpace: 'normal'
+      }}>
+        <div style={{marginRight: 6, width: 350, overflowWrap: 'break-word'}}>
+          <span style={{ overflowWrap: 'break-word' }}><b>{val}</b>: {desc}</span>
+        </div>
       </div>
     )
   }
@@ -226,7 +242,7 @@ const SankeyGraph = () => {
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 150, right: 150}}
+          margin={{ top: 20, bottom: 20, left: 180, right: 180}}
           align="center"
           colors={node => node.nodeColor}
           nodeOpacity={1}

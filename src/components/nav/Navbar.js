@@ -6,6 +6,7 @@ const Navbar = () => {
 
   return(
     <ScrollSpy   
+      style={{marginTop: 40, marginBottom: 40}}
       id="#nav"
       className="nav-style hidden-mobile"
       items={itemList}
