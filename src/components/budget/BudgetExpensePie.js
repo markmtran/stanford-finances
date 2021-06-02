@@ -75,8 +75,9 @@ const BudgetExpense = () => {
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
-                   width: 350,
-                   fontSize: 16}}>
+                   width: 320,
+                   fontSize: 16,
+                   fontWeight: 'normal'}}>
         <div style={{margin: 10}}>
           <span><b>{title}</b>{desc}</span>
         </div>
@@ -85,7 +86,7 @@ const BudgetExpense = () => {
   }
   
   return(
-    <div style={{height: 500}}>
+    <div style={{height: 500, fontWeight: 'bold'}}>
       <ResponsivePie
         data={data}
         // valueFormat={value => `$${value.toLocaleString() + '0'}`}

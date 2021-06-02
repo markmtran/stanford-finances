@@ -14,45 +14,55 @@ const SankeyGraph = () => {
     "nodes": [
       {
         "id": "Average Undergraduate Tuition",
-        "nodeColor": '#1303fc'
+        "nodeColor": '#e27f6a'
       },
       {
-        "id": "Average Financial Aid Provided by Stanford",
-        "nodeColor": '#1303fc'
+        "id": "Average Financial Aid Given by Stanford",
+        "nodeColor": '#bb5a52'
       },
       {
         "id": "What Stanford Covers",
+        "nodeColor": '#fab779'
       },
       {
         "id": "",
-        "nodeColor": '#abcdef'
+        "nodeColor": '#f8ce73'
       },
       {
         "id": "Instruction/Dep't Research",
+        "nodeColor": '#b3c274'
       },
       {
-        "id": "Financial Aid Costs",
+        "id": "FinancialAidCosts",
+        "nodeColor": '#7bb261'
       },
       {
         "id": "Departmental Administration",
+        "nodeColor": '#5e9968'
       },
       {
         "id": "Library",
+        "nodeColor": '#74c2a1'
       },
       {
         "id": "Facilities O&M Expenses",
+        "nodeColor": '#70ab92'
       },
       {
         "id": "Student Services",
+        "nodeColor": '#98d6b9'
       },
       {
         "id": "Administration (G&A)",
+        "nodeColor": '#93d1df'
       },
       {
         "id": "Depreciation",
+        "nodeColor": '#72b6cb'
       },
       {
         "id": "Institutional/Community",
+        "nodeColor": '#69adb6'
       }
     ],
     "links": [
@@ -63,7 +73,7 @@ const SankeyGraph = () => {
         "nodeColor": "#000000"
       },
       {
-        "source": "Average Financial Aid Provided by Stanford",
+        "source": "Average Financial Aid Given by Stanford",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
@@ -82,7 +92,7 @@ const SankeyGraph = () => {
       },
       {
         "source": "",
-        "target": "Financial Aid Costs",
+        "target": "FinancialAidCosts",
         "value": 31755.31,
         "nodeColor": "#000000"
       },
@@ -138,7 +148,7 @@ const SankeyGraph = () => {
         desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
         val = "$39,082.50"
         break;
-      case "Average Financial Aid Provided by Stanford":
+      case "Average Financial Aid Given by Stanford":
         desc = "This category is the average amount of financial aid per student. ";
         val = "$39,082.50"
         break;
@@ -154,7 +164,7 @@ const SankeyGraph = () => {
         desc = "This category includes the direct costs of research and teaching and consists of pay for faculty, lecturers, and research staff and other research and teaching related expenses. ";
         val = "$69,624.43"
         break;
-      case "Financial Aid Costs":
+      case "FinancialAidCosts":
         desc = "This category is money Stanford spends on financial aid (does not include external financial aid).";
         val = "$31,755.31"
         break;
@@ -194,13 +204,12 @@ const SankeyGraph = () => {
       <div style={{
         backgroundColor: 'white',
         borderRadius: 2,
-        width: 350,
+        width: 320,
         fontSize: 16,
-        overflowWrap: 'break-word',
         whiteSpace: 'normal'
       }}>
-        <div style={{marginRight: 6, width: 350, overflowWrap: 'break-word'}}>
-          <span style={{ overflowWrap: 'break-word' }}><b>{val}</b>: {desc}</span>
+        <div>
+          <span><b>{val}</b>: {desc}</span>
         </div>
       </div>
     )
@@ -267,7 +276,7 @@ const SankeyGraph = () => {
           labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1 ] ] }}
           theme={{
             fontFamily: "Source Sans Pro, sans",
-            fontSize: 12,
+            fontSize: 14,
           }}
         />
       </Grid>
