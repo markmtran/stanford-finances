@@ -1,29 +1,12 @@
 import { createRef } from "react";
-// import { makeStyles } from "@material-ui/core/styles";
 import ScrollSpy from "react-scrollspy";
 
-// const useStyles = makeStyles({
-//   sticky: {
-//     position: "sticky",
-//     top: 0,
-//     paddingTop: 10,
-//     paddingBottom: 10,
-//     backgroundColor: "white",
-//     display: "flex",
-//     justifyContent: "space-evenly",
-//     fontSize: "26px",
-//     fontWeight: "700",
-//     zIndex: 100,
-//   }
-// })
-
 const Navbar = () => {
-  //const classes = useStyles();
-
   const itemList = ["intro", "budget", "sankey", "timeline", "faq", "resources"];
 
   return(
     <ScrollSpy   
+      style={{marginTop: 50, marginBottom: 50}}
       id="#nav"
       className="nav-style hidden-mobile"
       items={itemList}

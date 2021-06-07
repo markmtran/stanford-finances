@@ -13,6 +13,7 @@ const Resources = () => {
         <ul>
           <li>Check out the following Stanford Magazine article: <a href="https://stanfordmag.org/contents/why-you-cant-just-use-the-endowment-for-that">Stanford Magazine</a></li>
           <li>Learn more through Stanford Fingate: <a href="https://fingate.stanford.edu/managing-funds/endowments#anchor-8021">Stanford Fingate</a></li>
+          <li>And read this Stanford Daily article: <a href="https://stanforddaily.com/2020/03/05/stanford-as-a-vc/">Stanford Daily</a></li>
         </ul>
       </Grid>
       <Grid item xs="1" md="2"/>

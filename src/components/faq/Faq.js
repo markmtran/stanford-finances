@@ -10,9 +10,6 @@ const useStyles = makeStyles({
     fontSize: "200",
     fontWeight: "900",
     fontFamily: "Source Sans Pro, sans",
-  },
-  answer: {
-    fontFamily: "Source Sans Pro, sans"
   }
 })
 
@@ -37,7 +34,7 @@ const Faq = () => {
             <Typography className={classes.question} variant="h5">Who am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.answer}>
+            <Typography class="faq-answer">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -49,7 +46,7 @@ const Faq = () => {
             <Typography className={classes.question} variant="h5">What am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.answer}>
+            <Typography class="faq-answer">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -61,7 +58,7 @@ const Faq = () => {
             <Typography className={classes.question} variant="h5">Where am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.answer}>
+            <Typography class="faq-answer">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -73,7 +70,7 @@ const Faq = () => {
             <Typography className={classes.question} variant="h5">Why am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.answer}>
+            <Typography class="faq-answer">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -85,7 +82,7 @@ const Faq = () => {
             <Typography className={classes.question} variant="h5">How am I?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.answer}>
+            <Typography class="faq-answer">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
               sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.

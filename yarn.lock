@@ -1515,6 +1515,17 @@
   dependencies:
     "@babel/runtime" "^7.4.4"
 
+"@material-ui/lab@^4.0.0-alpha.58":
+  version "4.0.0-alpha.58"
+  resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.58.tgz#c7ebb66f49863c5acbb20817163737caa299fafc"
+  integrity sha512-GKHlJqLxUeHH3L3dGQ48ZavYrqGOTXkFkiEiuYMAnAvXAZP4rhMIqeHOPXSUQan4Bd8QnafDcpovOSLnadDmKw==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+    "@material-ui/utils" "^4.11.2"
+    clsx "^1.0.4"
+    prop-types "^15.7.2"
+    react-is "^16.8.0 || ^17.0.0"
+
 "@material-ui/styles@^4.11.3":
   version "4.11.3"
   resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-4.11.3.tgz#1b8d97775a4a643b53478c895e3f2a464e8916f2"
@@ -1560,6 +1571,15 @@
     "@babel/runtime" "^7.4.4"
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
+
+"@nivo/arcs@0.69.0":
+  version "0.69.0"
+  resolved "https://registry.yarnpkg.com/@nivo/arcs/-/arcs-0.69.0.tgz#219e164bddf41962bececcbdb7b232d1cc927fee"
+  integrity sha512-ts9JSCGrpbMEV7fsD3RvxJY6U9qeD8OdcTf4lOuaFML58Td0qqAiJ7ozrJ9kwHF9SEv0Nfko/ZxCtKaNv4/epA==
+  dependencies:
+    "@nivo/colors" "0.69.0"
+    d3-shape "^1.3.5"
+    react-spring "9.1.2"
 
 "@nivo/circle-packing@^0.69.0":
   version "0.69.0"
@@ -1617,6 +1637,17 @@
   integrity sha512-LDnEdr+M4rBtUXv+0EJ+hroOLTk64cOrYZuz3LXVYkVTTNlJ2o41ghdVFCsHeiE+0t8fuXO0oHNEoixQx7UKdg==
   dependencies:
     lodash "^4.17.11"
+
+"@nivo/pie@^0.69.0":
+  version "0.69.0"
+  resolved "https://registry.yarnpkg.com/@nivo/pie/-/pie-0.69.0.tgz#7f5d334bcc5d3b811bcb842caaa394b71aeb46d9"
+  integrity sha512-OmiXLt4bl45bQf0hcbQrQyckZJcQnow0JkbVg/5ZYnGdlbiB1IPqBWFnFpl/tkPqWhWWZZd/sMEmfy3I91hvvQ==
+  dependencies:
+    "@nivo/arcs" "0.69.0"
+    "@nivo/colors" "0.69.0"
+    "@nivo/legends" "0.69.0"
+    "@nivo/tooltip" "0.69.0"
+    d3-shape "^1.3.5"
 
 "@nivo/recompose@0.69.0":
   version "0.69.0"
@@ -4216,6 +4247,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bootstrap@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.0.tgz#97b9f29ac98f98dfa43bf7468262d84392552fd7"
+  integrity sha512-Io55IuQY3kydzHtbGvQya3H+KorS/M9rSNyfCGCg9WZ4pyT/lCxIlpJgG1GXW/PswzC84Tr2fBYi+7+jFVQQBw==
 
 boxen@^4.2.0:
   version "4.2.0"

@@ -3,12 +3,6 @@ import { ResponsiveSankey } from "@nivo/sankey";
 import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
-  tipHeader: {
-    fontWeight: "bold"
-  },
-  tipDesc: {
-
-  },
   nodeStyle: {
     fontWeight: "bold"
   }
@@ -19,97 +13,130 @@ const SankeyGraph = () => {
   const data = {
     "nodes": [
       {
-        "id": "Price per Student",
+        "id": "AverageUndergraduateTuition",
+        "nodeColor": '#e27f6a'
       },
       {
-        "id": "Stanford Subsidy",
+        "id": "AverageFinancialAidGivenbyStanford",
+        "nodeColor": '#bb5a52'
+      },
+      {
+        "id": "WhatStanfordCovers",
+        "nodeColor": '#fab779'
       },
       {
         "id": "",
+        "nodeColor": '#f8ce73'
       },
       {
-        "id": "Instruct/Dept Research",
+        "id": "Instruction/Dep'tResearch",
+        "nodeColor": '#b3c274'
       },
       {
-        "id": "FinAid Costs",
+        "id": "FinancialAidCosts",
+        "nodeColor": '#7bb261'
       },
       {
-        "id": "Dep't Administration",
+        "id": "DepartmentalAdministration",
+        "nodeColor": '#5e9968'
       },
       {
         "id": "Library",
+        "nodeColor": '#74c2a1'
       },
       {
-        "id": "Facilities O&M",
+        "id": "FacilitiesO&MExpenses",
+        "nodeColor": '#70ab92'
       },
       {
-        "id": "Student Services",
+        "id": "StudentServices",
+        "nodeColor": '#98d6b9'
       },
       {
-        "id": "Administration (G&A)",
+        "id": "Administration(G&A)",
+        "nodeColor": '#93d1df'
       },
       {
         "id": "Depreciation",
+        "nodeColor": '#72b6cb'
       },
       {
         "id": "Institutional/Community",
+        "nodeColor": '#69adb6'
       }
     ],
     "links": [
       {
-        "source": "Price per Student",
+        "source": "AverageUndergraduateTuition",
         "target": "",
-        "value": 78165.00
+        "value": 39082.50,
+        "nodeColor": "#000000"
       },
       {
-        "source": "Stanford Subsidy",
+        "source": "AverageFinancialAidGivenbyStanford",
         "target": "",
-        "value": 77643.67
+        "value": 39082.50,
+        "nodeColor": "#000000"
+      },
+      {
+        "source": "WhatStanfordCovers",
+        "target": "",
+        "value": 77643.67,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Instruct/Dept Research",
-        "value": 69624.43
+        "target": "Instruction/Dep'tResearch",
+        "value": 69624.43,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "FinAid Costs",
-        "value": 31755.31
+        "target": "FinancialAidCosts",
+        "value": 31755.31,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Dep't Administration",
-        "value": 19275.27
+        "target": "DepartmentalAdministration",
+        "value": 19275.27,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Facilities O&M",
-        "value": 7609.43
+        "target": "FacilitiesO&MExpenses",
+        "value": 7609.43,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Library",
-        "value": 7479.56
+        "value": 7479.56,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Student Services",
-        "value": 7082.68
+        "target": "StudentServices",
+        "value": 7082.68,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Administration (G&A)",
-        "value": 5088.03
+        "target": "Administration(G&A)",
+        "value": 5088.03,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Depreciation",
-        "value": 4740.75
+        "value": 4740.75,
+        "nodeColor": "#000000"
       },
       {
         "source": "",
         "target": "Institutional/Community",
-        "value": 3153.21
+        "value": 3153.21,
+        "nodeColor": "#000000"
       }
     ]
   }
@@ -117,52 +144,56 @@ const SankeyGraph = () => {
     let desc = "";
     let val = "";
     switch(node.source.label) {
-      case "Price per Student":
-        desc = "pps description";
-        val = "$78,165.00"
+      case "AverageUndergraduateTuition":
+        desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
+        val = "$39,082.50"
         break;
-      case "Stanford Subsidy":
-        desc = "ss description";
+      case "AverageFinancialAidGivenbyStanford":
+        desc = "This category is the average amount of financial aid per student. ";
+        val = "$39,082.50"
+        break;
+      case "WhatStanfordCovers":
+        desc = "This category is the amount Stanford ends up paying over and above what students pay for their own education. This is the indirect subsidy Stanford pays.";
         val = "$77,643.67"
         break;
       default:
         break;
     }
     switch(node.target.label) {
-      case "Instruct/Dept Research":
-        desc = "I/D research description";
+      case "Instruction/Dep'tResearch":
+        desc = "This category includes the direct costs of research and teaching and consists of pay for faculty, lecturers, and research staff and other research and teaching related expenses. ";
         val = "$69,624.43"
         break;
-      case "FinAid Costs":
-        desc = "FA description";
+      case "FinancialAidCosts":
+        desc = "This category is money Stanford spends on financial aid (does not include external financial aid).";
         val = "$31,755.31"
         break;
-      case "Dep't Administration":
-        desc = "DA description";
+      case "DepartmentalAdministration":
+        desc = "This category includes the costs of running departments like the departmental administrators. ";
         val = "$19,275.27"
         break;
       case "Library":
-        desc = "library description";
+        desc = "This category includes the costs of running the library. ";
         val = "$7,479.56"
         break;
-      case "Facilities O&M":
-        desc = "fom description";
+      case "FacilitiesO&MExpenses":
+        desc = "This category is the amount spent to keep the physical buildings at Stanford up and running.";
         val = "$7,609.43"
         break;
-      case "Student Services":
-        desc = "stuserv description";
+      case "StudentServices":
+        desc = "This category includes admissions, academic advising, career planning, and other non-academic directly student facing services.";
         val = "$7,082.68"
         break;
-      case "Administration (G&A)":
-        desc = "admin g&a description";
+      case "Administration(G&A)":
+        desc = "This category includes all of the general costs that go into running a large institution like HR, legal counsel, IT, etc.";
         val = "$5,088.03"
         break;
       case "Depreciation":
-        desc = "dep description";
+        desc = "This category reflects the general decline in value that comes from the wear and tear on Stanford’s buildings and other assets.";
         val = "$4,740.75"
         break;
       case "Institutional/Community":
-        desc = "I/C description";
+        desc = "This category is a catch all that includes things like Haas, Vaden, and the Community Centers.";
         val = "$3,153.21"
         break;
       default:
@@ -170,9 +201,16 @@ const SankeyGraph = () => {
     }
     
     return (
-      <div>
-        <span className={classes.tipHeader}>{val}</span><br />
-        <span className={classes.tipDesc}>{desc}</span>
+      <div style={{
+        backgroundColor: 'white',
+        borderRadius: 2,
+        width: 320,
+        fontSize: 16,
+        whiteSpace: 'normal'
+      }}>
+        <div>
+          <span><b>{val}</b>: {desc}</span>
+        </div>
       </div>
     )
   }
@@ -205,14 +243,17 @@ const SankeyGraph = () => {
 
   return(
     <Grid container justify="center" xs={12}>
+      <Grid container item xs="12" justify="center">
+        <h3 class="graphic-margin">2020-2021 Academic Year</h3>
+      </Grid>
       <Grid item sm={0} md={1} lg={2}/>
-      <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "600px", minWidth: "700px"}}>
+      <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "500px", minWidth: "700px"}}>
         <ResponsiveSankey
           data={data}
           sort="descending"
-          margin={{ top: 20, bottom: 20, left: 140, right: 140}}
+          margin={{ top: 20, bottom: 20, left: 180, right: 180}}
           align="center"
-          colors={{ scheme: 'category10' }}
+          colors={node => node.nodeColor}
           nodeOpacity={1}
           nodeThickness={18}
           nodeInnerPadding={3}
@@ -233,6 +274,10 @@ const SankeyGraph = () => {
           labelOrientation="horizontal"
           labelPadding={10}
           labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1 ] ] }}
+          theme={{
+            fontFamily: "Source Sans Pro, sans",
+            fontSize: 14,
+          }}
         />
       </Grid>
       <Grid item sm={0} md={1} lg={2}/>
