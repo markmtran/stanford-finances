@@ -22,6 +22,13 @@ body {
 	.hidden-mobile {
 		display: none;
 	}
+	.intro-desc {
+		margin-top: 30px;
+	}
+	html,
+	body {
+		overflow-x: hidden;
+	}
 }
 .hamburger-div {
 	position: sticky;
@@ -63,7 +70,7 @@ body {
 	height: 5px;
 	content: '';
 	position: absolute;
-	background-color: #b1040e;
+	background-color: #8c1515;
 }
 .nav-link-ltr::before {
 	width: 0%;
@@ -75,7 +82,7 @@ body {
 }
 .current-section a {
 	transition: 800ms;
-	color: #b1040e;
+	color: #8c1515;
 	opacity: 1;
 }
 .current-section a::before {
@@ -83,7 +90,7 @@ body {
 	height: 5px;
 	content: '';
 	position: absolute;
-	background-color: #b1040e;
+	background-color: #8c1515;
 }
 .current-section a::before {
 	width: 0%;
@@ -95,19 +102,20 @@ body {
 
 /* Intro CSS */
 #intro-div {
-	height: 600px;
+	height: 400px;
 	background: linear-gradient(rgba(0, 0, 1, 0), rgba(0, 0, 1, 0.2)),
 		url('./stanfordPic.JPG');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	filter: blur(4px);
-	-webkit-filter: blur(4px);
+	/* filter: blur(4px);
+	-webkit-filter: blur(4px); */
+	filter: brightness(80%);
 }
 
 .intro-title {
 	width: 100%;
-	font-family: 'Source Serif Pro', serif;
+	font-family: 'Source Sans Pro', serif;
 	color: white;
 	font-weight: bold;
 	font-size: 90px;
@@ -118,14 +126,6 @@ body {
 	.intro-title {
 		font-size: 70px;
 	}
-}
-
-.intro-desc {
-	position: relative;
-	bottom: 10px;
-	width: 100%;
-	color: white;
-	text-shadow: 0 0 30px rgb(0 0 0 / 70%);
 }
 
 .header-margin {

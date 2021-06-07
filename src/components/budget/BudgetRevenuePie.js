@@ -46,7 +46,8 @@ const BudgetRevenue = () => {
       "value": 445.10,
       "color": "#fbce73"
     },
-  ]
+  ];
+  const total = 6758.2;
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -115,7 +116,7 @@ const BudgetRevenue = () => {
                    width: 320,
                    fontSize: 16,
                    fontWeight: 'normal'}}>
-        <div style={{margin: 10}}>
+        <div style={{padding: 12}}>
           <span><b>{title}</b>{desc}</span>
         </div>
       </div>
@@ -127,8 +128,8 @@ const BudgetRevenue = () => {
       <ResponsivePie
         data={data}
         sortByValue
-        // valueFormat={value => `$${value.toLocaleString() + '0'}`}
-        valueFormat='>-$0,.2f'
+        // valueFormat='>-$0,.2f'
+        valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
         margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}

@@ -13,15 +13,15 @@ const SankeyGraph = () => {
   const data = {
     "nodes": [
       {
-        "id": "Average Undergraduate Tuition",
+        "id": "AverageUndergraduateTuition",
         "nodeColor": '#e27f6a'
       },
       {
-        "id": "Average Financial Aid Given by Stanford",
+        "id": "AverageFinancialAidGivenbyStanford",
         "nodeColor": '#bb5a52'
       },
       {
-        "id": "What Stanford Covers",
+        "id": "WhatStanfordCovers",
         "nodeColor": '#fab779'
       },
       {
@@ -29,7 +29,7 @@ const SankeyGraph = () => {
         "nodeColor": '#f8ce73'
       },
       {
-        "id": "Instruction/Dep't Research",
+        "id": "Instruction/Dep'tResearch",
         "nodeColor": '#b3c274'
       },
       {
@@ -37,7 +37,7 @@ const SankeyGraph = () => {
         "nodeColor": '#7bb261'
       },
       {
-        "id": "Departmental Administration",
+        "id": "DepartmentalAdministration",
         "nodeColor": '#5e9968'
       },
       {
@@ -45,15 +45,15 @@ const SankeyGraph = () => {
         "nodeColor": '#74c2a1'
       },
       {
-        "id": "Facilities O&M Expenses",
+        "id": "FacilitiesO&MExpenses",
         "nodeColor": '#70ab92'
       },
       {
-        "id": "Student Services",
+        "id": "StudentServices",
         "nodeColor": '#98d6b9'
       },
       {
-        "id": "Administration (G&A)",
+        "id": "Administration(G&A)",
         "nodeColor": '#93d1df'
       },
       {
@@ -67,26 +67,26 @@ const SankeyGraph = () => {
     ],
     "links": [
       {
-        "source": "Average Undergraduate Tuition",
+        "source": "AverageUndergraduateTuition",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
       },
       {
-        "source": "Average Financial Aid Given by Stanford",
+        "source": "AverageFinancialAidGivenbyStanford",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
       },
       {
-        "source": "What Stanford Covers",
+        "source": "WhatStanfordCovers",
         "target": "",
         "value": 77643.67,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Instruction/Dep't Research",
+        "target": "Instruction/Dep'tResearch",
         "value": 69624.43,
         "nodeColor": "#000000"
       },
@@ -98,13 +98,13 @@ const SankeyGraph = () => {
       },
       {
         "source": "",
-        "target": "Departmental Administration",
+        "target": "DepartmentalAdministration",
         "value": 19275.27,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Facilities O&M Expenses",
+        "target": "FacilitiesO&MExpenses",
         "value": 7609.43,
         "nodeColor": "#000000"
       },
@@ -116,13 +116,13 @@ const SankeyGraph = () => {
       },
       {
         "source": "",
-        "target": "Student Services",
+        "target": "StudentServices",
         "value": 7082.68,
         "nodeColor": "#000000"
       },
       {
         "source": "",
-        "target": "Administration (G&A)",
+        "target": "Administration(G&A)",
         "value": 5088.03,
         "nodeColor": "#000000"
       },
@@ -144,15 +144,15 @@ const SankeyGraph = () => {
     let desc = "";
     let val = "";
     switch(node.source.label) {
-      case "Average Undergraduate Tuition":
+      case "AverageUndergraduateTuition":
         desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
         val = "$39,082.50"
         break;
-      case "Average Financial Aid Given by Stanford":
+      case "AverageFinancialAidGivenbyStanford":
         desc = "This category is the average amount of financial aid per student. ";
         val = "$39,082.50"
         break;
-      case "What Stanford Covers":
+      case "WhatStanfordCovers":
         desc = "This category is the amount Stanford ends up paying over and above what students pay for their own education. This is the indirect subsidy Stanford pays.";
         val = "$77,643.67"
         break;
@@ -160,7 +160,7 @@ const SankeyGraph = () => {
         break;
     }
     switch(node.target.label) {
-      case "Instruction/Dep't Research":
+      case "Instruction/Dep'tResearch":
         desc = "This category includes the direct costs of research and teaching and consists of pay for faculty, lecturers, and research staff and other research and teaching related expenses. ";
         val = "$69,624.43"
         break;
@@ -168,7 +168,7 @@ const SankeyGraph = () => {
         desc = "This category is money Stanford spends on financial aid (does not include external financial aid).";
         val = "$31,755.31"
         break;
-      case "Departmental Administration":
+      case "DepartmentalAdministration":
         desc = "This category includes the costs of running departments like the departmental administrators. ";
         val = "$19,275.27"
         break;
@@ -176,15 +176,15 @@ const SankeyGraph = () => {
         desc = "This category includes the costs of running the library. ";
         val = "$7,479.56"
         break;
-      case "Facilities O&M Expenses":
+      case "FacilitiesO&MExpenses":
         desc = "This category is the amount spent to keep the physical buildings at Stanford up and running.";
         val = "$7,609.43"
         break;
-      case "Student Services":
+      case "StudentServices":
         desc = "This category includes admissions, academic advising, career planning, and other non-academic directly student facing services.";
         val = "$7,082.68"
         break;
-      case "Administration (G&A)":
+      case "Administration(G&A)":
         desc = "This category includes all of the general costs that go into running a large institution like HR, legal counsel, IT, etc.";
         val = "$5,088.03"
         break;

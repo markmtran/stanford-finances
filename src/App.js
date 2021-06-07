@@ -8,6 +8,7 @@ import Resources from './components/resources/Resources';
 import Sankey from './components/sankey/Sankey';
 import Timeline from './components/timeline/Timeline';
 import Hamburger from './components/nav/Hamburger';
+import IntroDesc from './components/intro/IntroDesc';
 
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
     <div>
       <Intro />
       <Navbar />
-      <Hamburger />
+      {/* <Hamburger /> */}
+      <IntroDesc />
       <Budget />
       <Sankey />
       <Timeline />

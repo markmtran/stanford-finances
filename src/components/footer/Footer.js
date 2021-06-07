@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   appBarStyle: {
-    backgroundColor: "#B1040E"
+    backgroundColor: "#8c1515"
   },
   stanfordFont: {
     fontFamily: "Source Serif Pro, serif"

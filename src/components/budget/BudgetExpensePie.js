@@ -21,7 +21,8 @@ const BudgetExpense = () => {
       "value": 449.50,
       "color": "#5E9968"
     }
-  ]
+  ];
+  const total = 5838.5;
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -78,7 +79,7 @@ const BudgetExpense = () => {
                    width: 320,
                    fontSize: 16,
                    fontWeight: 'normal'}}>
-        <div style={{margin: 10}}>
+        <div style={{padding: 12}}>
           <span><b>{title}</b>{desc}</span>
         </div>
       </div>
@@ -89,8 +90,8 @@ const BudgetExpense = () => {
     <div style={{height: 500, fontWeight: 'bold'}}>
       <ResponsivePie
         data={data}
-        // valueFormat={value => `$${value.toLocaleString() + '0'}`}
-        valueFormat='>-$0,.2f'
+        // valueFormat='>-0,.2f'
+        valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
         margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={-200}
