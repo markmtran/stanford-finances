@@ -14,15 +14,15 @@ const SankeyGraph = () => {
     "nodes": [
       {
         "id": "AverageUndergraduateTuition",
-        "nodeColor": '#e27f6a'
+        "nodeColor": '#fab779'
       },
       {
         "id": "AverageFinancialAidGivenbyStanford",
-        "nodeColor": '#bb5a52'
+        "nodeColor": '#e27f6a'
       },
       {
         "id": "WhatStanfordCovers",
-        "nodeColor": '#fab779'
+        "nodeColor": '#bb5a52'
       },
       {
         "id": "",
@@ -41,12 +41,12 @@ const SankeyGraph = () => {
         "nodeColor": '#5e9968'
       },
       {
-        "id": "Library",
-        "nodeColor": '#74c2a1'
-      },
-      {
         "id": "FacilitiesO&MExpenses",
         "nodeColor": '#70ab92'
+      },
+      {
+        "id": "Library",
+        "nodeColor": '#74c2a1'
       },
       {
         "id": "StudentServices",
@@ -241,17 +241,21 @@ const SankeyGraph = () => {
     return width < 750 ? "inside" : "outside";
   }
 
+  const handleMargins = () => {
+    return width < 750 ? 150 : 230
+  }
+
   return(
     <Grid container justify="center" xs={12}>
       <Grid container item xs="12" justify="center">
-        <h3 class="graphic-margin">2020-2021 Academic Year</h3>
+        <h3 class="graphic-margin">Costs per Student for the<br />2020-2021 Academic Year</h3>
       </Grid>
       <Grid item sm={0} md={1} lg={2}/>
       <Grid  container item sm={12} md={10} lg={8} alignItems="center" style={{height: "500px", minWidth: "700px"}}>
         <ResponsiveSankey
           data={data}
-          sort="descending"
-          margin={{ top: 20, bottom: 20, left: 180, right: 180}}
+          sort="input"
+          margin={{ top: 0, bottom: 20, left: handleMargins(), right: handleMargins()}}
           align="center"
           colors={node => node.nodeColor}
           nodeOpacity={1}
@@ -262,7 +266,19 @@ const SankeyGraph = () => {
           nodeBorderWidth={0}
           nodeBorderColor={{ from: 'color', modifiers: [ [ 'darker', 0.8 ] ] }}
           nodeTooltip={node =>
-            (node.label === "") ? <span className={classes.nodeStyle}>Student</span> :
+            (node.label === "") ? 
+              <div style={{
+                backgroundColor: 'white',
+                borderRadius: 2,
+                width: 320,
+                fontSize: 16,
+                whiteSpace: 'normal'
+              }}>
+                <div>
+                  <span>On average, undergraduate students <b>pay $39,082.50</b> and <b>receive $116,726.17 </b> 
+                      through financial aid and the indirect Stanford subsidy.</span>
+                </div>
+              </div> :
             <span className={classes.nodeStyle}>{node.label}</span>
           }
           linkTooltip={node => getLinkTooltip(node)}

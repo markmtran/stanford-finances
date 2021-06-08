@@ -80,6 +80,7 @@ const BudgetRevenue = () => {
 
   function getTooltip(node) {
     let title = node.datum.id;
+    let val = node.datum.value;
     let desc = "";
     switch(title) {
       case "Gifts & Net Assets":
@@ -107,7 +108,7 @@ const BudgetRevenue = () => {
         break;
     }
 
-    title = width < 750 ? node.datum.id + ": " : "";
+    title = width < 750 ? node.datum.id + `, $${val.toFixed(2)}: ` : `$${val.toFixed(2)}: `;
 
     return (
       <div style={{backgroundColor: 'white', 
@@ -124,13 +125,14 @@ const BudgetRevenue = () => {
   }
   
   return(
-    <div style={{height: 500, fontWeight: 'bold'}}>
+    <div style={{height: 500, fontWeight: 'bold', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+      <h2>Budget Revenues</h2>
       <ResponsivePie
         data={data}
         sortByValue
         // valueFormat='>-$0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
+        margin={{ top: 30, bottom: 100, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}
         endAngle={390}
@@ -149,7 +151,7 @@ const BudgetRevenue = () => {
         arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', 3 ] ] }}
         theme={{
           fontFamily: "Source Sans Pro, sans",
-          fontSize: 18,
+          fontSize: 16,
         }}
         tooltip={node => getTooltip(node)}
       />

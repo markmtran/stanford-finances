@@ -10,7 +10,7 @@ const SankeyDesc = () => {
       </Grid>
       
       <Grid item xs="1" md="2"/>
-      <Grid container item xs="10" md="8" justify="center">
+      <Grid container item xs="10" md="8">
         <p>
           This infographic shows the average financial picture of an undergraduate at Stanford. 
           It includes how much undergraduates pay for tuition on average, how much Stanford subsidizes their education 
@@ -21,7 +21,7 @@ const SankeyDesc = () => {
         </p>
         <p>
           Check out the sankey graph below to see the flow of money centered around the student experience. 
-          Hover over a section to learn more about it!
+          Hover over or tap (for mobile) a section to learn more about it!
         </p>
       </Grid>
       <Grid item xs="1" md="2"/>

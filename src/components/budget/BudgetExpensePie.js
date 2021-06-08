@@ -4,9 +4,69 @@ import { ResponsivePie } from '@nivo/pie';
 const BudgetExpense = () => {
   const data = [
     {
-      "id": "Academic Units",
-      "label": "Academic Units",
-      "value": 5250.60,
+      "id": "School of Medicine",
+      "label": "School of Medicine",
+      "value": 2660.20,
+      "color": "#B3C274"
+    },
+    {
+      "id": "School of Humanities & Sciences",
+      "label": "School of Humanities & Sciences",
+      "value": 517.60,
+      "color": "#B3C274"
+    },
+    {
+      "id": "SLAC",
+      "label": "SLAC",
+      "value": 492.40,
+      "color": "#B3C274"
+    },
+    {
+      "id": "School of Engineering",
+      "label": "School of Engineering",
+      "value": 428.20,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Graduate School of Business",
+      "label": "Graduate School of Business",
+      "value": 299.30,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Other",
+      "label": "Other",
+      "value": 257.20,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Dean of Research",
+      "label": "Dean of Research",
+      "value": 248.60,
+      "color": "#B3C274"
+    },
+    {
+      "id": "School of Law",
+      "label": "School of Law",
+      "value": 100.20,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Libraries",
+      "label": "Libraries",
+      "value": 92.80,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Earth, Energy, Environmental Sciences",
+      "label": "Earth, Energy, Environmental Sciences",
+      "value": 77.10,
+      "color": "#B3C274"
+    },
+    {
+      "id": "Graduate School of Education",
+      "label": "Graduate School of Education",
+      "value": 77.00,
       "color": "#B3C274"
     },
     {
@@ -55,6 +115,7 @@ const BudgetExpense = () => {
 
   function getTooltip(node) {
     let title = node.datum.id;
+    let val = node.datum.value;
     let desc = "";
     switch(title) {
       case "Academic Units":
@@ -70,7 +131,7 @@ const BudgetExpense = () => {
         break;
     }
 
-    title = width < 750 ? node.datum.id + ": " : "";
+    title = width < 750 ? node.datum.id + `: $${val.toFixed(2)}` : `$${val.toFixed(2)}: `;
 
     return (
       <div style={{backgroundColor: 'white', 
@@ -87,12 +148,20 @@ const BudgetExpense = () => {
   }
   
   return(
-    <div style={{height: 500, fontWeight: 'bold'}}>
+    <div style={{
+      height: 500, 
+      fontWeight: 'bold', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      marginBottom: 40
+    }}>
       <ResponsivePie
         data={data}
         // valueFormat='>-0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
+        margin={{ top: 100, bottom: 30, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={-200}
         endAngle={160}
@@ -111,11 +180,12 @@ const BudgetExpense = () => {
         arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', 3 ] ] }}
         theme={{
           fontFamily: "Source Sans Pro, sans",
-          fontSize: 18,
+          fontSize: 16,
           textColor: 'black'
         }}
         tooltip={node => getTooltip(node)}
       />
+      <h2>Budget Expenses</h2>
     </div>
   )
 }

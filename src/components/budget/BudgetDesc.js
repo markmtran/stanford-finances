@@ -20,7 +20,7 @@ const BudgetDesc = () => {
           Hover over or tap (for mobile) each revenue/expense for more information!
         </p>
         <p style={{fontSize: 14}}>
-          <i>*Note: The following values are in millions of dollars.</i>
+          <i>*Note: Dollar amounts are in millions of dollars.</i>
         </p>
       </Grid>
       <Grid item xs="1" md="2" />
