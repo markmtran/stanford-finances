@@ -60,7 +60,7 @@ const Intro = () => {
         <div id="intro-div" />
         <Grid container xs={12} style={{position: "absolute", top: 45}} justify="center" alignItems="center">
           <Grid item xs={1} sm={1} md={1} lg={2}/>
-          <Grid container item xs={10} sm={10} md={10} lg={8} justifyContent="center" alignItems="center">
+          <Grid container item xs={10} sm={10} md={10} lg={8}>
             <Typography class="intro-title" variant="h2">Stanford's Finances</Typography>
           </Grid>
           <Grid item xs={1} sm={1} md={1} lg={2}/>
