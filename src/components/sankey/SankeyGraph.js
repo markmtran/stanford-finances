@@ -271,12 +271,11 @@ const SankeyGraph = () => {
                 backgroundColor: 'white',
                 borderRadius: 2,
                 width: 320,
-                fontSize: 16,
+                fontSize: 18,
                 whiteSpace: 'normal'
               }}>
                 <div>
-                  <span>On average, undergraduate students <b>pay $39,082.50</b> and <b>receive $116,726.17 </b> 
-                      through financial aid and the indirect Stanford subsidy.</span>
+                  <span>The General Cost of a Student's Education</span>
                 </div>
               </div> :
             <span className={classes.nodeStyle}>{node.label}</span>
