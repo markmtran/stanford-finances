@@ -13,7 +13,7 @@ const SankeyGraph = () => {
   const data = {
     "nodes": [
       {
-        "id": "Average Undergrad Tuition",
+        "id": "AverageUndergradTuition",
         "nodeColor": '#fab779'
       },
       {
@@ -67,7 +67,7 @@ const SankeyGraph = () => {
     ],
     "links": [
       {
-        "source": "Average Undergrad Tuition",
+        "source": "AverageUndergradTuition",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
@@ -144,7 +144,7 @@ const SankeyGraph = () => {
     let desc = "";
     let val = "";
     switch(node.source.label) {
-      case "Average Undergrad Tuition":
+      case "AverageUndergradTuition":
         desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
         val = "$39,082.50"
         break;
@@ -242,7 +242,7 @@ const SankeyGraph = () => {
   }
 
   const handleMargins = () => {
-    return width < 750 ? 150 : 230
+    return width < 750 ? 160 : 230
   }
 
   return(

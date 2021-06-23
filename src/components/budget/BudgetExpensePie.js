@@ -181,7 +181,7 @@ const BudgetExpense = () => {
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
         //enableArcLinkLabels={handleArcLinkLabels()}
-        enableArcLinkLabels
+        enableArcLinkLabels={handleArcLinkLabels()}
         arcLinkLabelsSkipAngle={0}
         arcLinkLabelsTextColor="#333333"
         arcLinkLabelsThickness={2}
