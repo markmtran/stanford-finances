@@ -153,7 +153,6 @@ const BudgetRevenue = () => {
       <ResponsivePie
         data={data}
         sortByValue
-        // valueFormat='>-$0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
         margin={{ top: 28, bottom: 60, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
