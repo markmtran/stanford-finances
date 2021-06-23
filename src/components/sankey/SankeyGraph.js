@@ -13,11 +13,11 @@ const SankeyGraph = () => {
   const data = {
     "nodes": [
       {
-        "id": "AverageUndergraduateTuition",
+        "id": "Average Undergrad Tuition",
         "nodeColor": '#fab779'
       },
       {
-        "id": "AverageFinancialAidGivenbyStanford",
+        "id": "AverageFinancialAid",
         "nodeColor": '#e27f6a'
       },
       {
@@ -37,7 +37,7 @@ const SankeyGraph = () => {
         "nodeColor": '#7bb261'
       },
       {
-        "id": "DepartmentalAdministration",
+        "id": "Dep'tAdministration",
         "nodeColor": '#5e9968'
       },
       {
@@ -67,13 +67,13 @@ const SankeyGraph = () => {
     ],
     "links": [
       {
-        "source": "AverageUndergraduateTuition",
+        "source": "Average Undergrad Tuition",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
       },
       {
-        "source": "AverageFinancialAidGivenbyStanford",
+        "source": "AverageFinancialAid",
         "target": "",
         "value": 39082.50,
         "nodeColor": "#000000"
@@ -98,7 +98,7 @@ const SankeyGraph = () => {
       },
       {
         "source": "",
-        "target": "DepartmentalAdministration",
+        "target": "Dep'tAdministration",
         "value": 19275.27,
         "nodeColor": "#000000"
       },
@@ -144,11 +144,11 @@ const SankeyGraph = () => {
     let desc = "";
     let val = "";
     switch(node.source.label) {
-      case "AverageUndergraduateTuition":
+      case "Average Undergrad Tuition":
         desc = "This category is the average amount that students actually pay in tuition (many students receive financial aid).";
         val = "$39,082.50"
         break;
-      case "AverageFinancialAidGivenbyStanford":
+      case "AverageFinancialAid":
         desc = "This category is the average amount of financial aid per student. ";
         val = "$39,082.50"
         break;
@@ -168,7 +168,7 @@ const SankeyGraph = () => {
         desc = "This category is money Stanford spends on financial aid (does not include external financial aid).";
         val = "$31,755.31"
         break;
-      case "DepartmentalAdministration":
+      case "Dep'tAdministration":
         desc = "This category includes the costs of running departments like the departmental administrators. ";
         val = "$19,275.27"
         break;
@@ -267,17 +267,18 @@ const SankeyGraph = () => {
           nodeBorderColor={{ from: 'color', modifiers: [ [ 'darker', 0.8 ] ] }}
           nodeTooltip={node =>
             (node.label === "") ? 
-              <div style={{
-                backgroundColor: 'white',
-                borderRadius: 2,
-                width: 320,
-                fontSize: 18,
-                whiteSpace: 'normal'
-              }}>
-                <div>
-                  <span>The General Cost of a Student's Education</span>
-                </div>
-              </div> :
+              // <div style={{
+              //   backgroundColor: 'white',
+              //   borderRadius: 2,
+              //   width: 320,
+              //   fontSize: 18,
+              //   whiteSpace: 'normal'
+              // }}>
+              //   <div>
+              //     <span>Total Cost: $155,808.67</span>
+              //   </div>
+              // </div> :
+            <span className={classes.nodeStyle}>Total Cost: $155,808.67</span> :
             <span className={classes.nodeStyle}>{node.label}</span>
           }
           linkTooltip={node => getLinkTooltip(node)}

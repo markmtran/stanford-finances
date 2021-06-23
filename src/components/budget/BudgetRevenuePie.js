@@ -149,13 +149,13 @@ const BudgetRevenue = () => {
       justifyContent: 'center', 
       alignItems: 'center'
     }}>
-      <h2 class="budget-titles">Budget Revenues</h2>
+      <h2 class="budget-titles">Budget Revenues (Total: $6,758.2 million)</h2>
       <ResponsivePie
         data={data}
         sortByValue
         // valueFormat='>-$0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 20, bottom: 60, right: handleMargins(), left: handleMargins() }}
+        margin={{ top: 28, bottom: 60, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}
         endAngle={390}

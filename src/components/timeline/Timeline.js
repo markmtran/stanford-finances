@@ -2,7 +2,9 @@ import TimelineDesc from "./TimelineDesc";
 
 const Timeline = () => {
   return(
-    <TimelineDesc />
+    <div id="timeline">
+      <TimelineDesc />
+    </div>
   );
 }
 

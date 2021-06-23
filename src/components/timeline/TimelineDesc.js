@@ -6,7 +6,7 @@ const TimelineDesc = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 id="timeline" class="header-margin">Finances Timeline</h1>
+        <h1 class="header-margin">Finances Timeline</h1>
       </Grid>
 
       <Grid item xs="1" md="2"/>
