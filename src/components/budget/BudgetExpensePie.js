@@ -28,16 +28,18 @@ const BudgetExpense = () => {
       "value": 428.20,
       "color": "#B3C274"
     },
+    // Grad Schools of Business and Education
     {
-      "id": "Graduate School of Business",
-      "label": "Graduate School of Business",
-      "value": 299.30,
+      "id": "Graduate Schools",
+      "label": "Graduate Schools",
+      "value": 376.3,
       "color": "#B3C274"
     },
+    // Includes Library
     {
       "id": "Other",
       "label": "Other",
-      "value": 257.20,
+      "value": 350.00,
       "color": "#B3C274"
     },
     {
@@ -53,21 +55,9 @@ const BudgetExpense = () => {
       "color": "#B3C274"
     },
     {
-      "id": "Libraries",
-      "label": "Libraries",
-      "value": 92.80,
-      "color": "#B3C274"
-    },
-    {
       "id": "Earth, Energy, Environmental Sciences",
       "label": "Earth, Energy, Environmental Sciences",
       "value": 77.10,
-      "color": "#B3C274"
-    },
-    {
-      "id": "Graduate School of Education",
-      "label": "Graduate School of Education",
-      "value": 77.00,
       "color": "#B3C274"
     },
     {
@@ -110,8 +100,35 @@ const BudgetExpense = () => {
   const handleArcLinkLabels = () => {
     return width < 750 ? false : true;
   }
-  const handleMargins = () => {
-    return width < 750 ? 40 : 200
+
+  const handleDivHeight = () => {
+    return width < 750 ? 700 : 500;
+  }
+
+  const handleXMargins = () => {
+    return width < 750 ? 40 : 200;
+  }
+
+  const handleYMargins = () => {
+    return width < 750 ? 350 : 100;
+  }
+
+  const handleLegend = () => {
+    if (width < 750) {
+      return [
+        {
+          anchor: 'bottom',
+          direction: 'column',
+          translateX: 0,
+          translateY: 350,
+          itemWidth: 200,
+          itemHeight: 20,
+          itemsSpacing: 10
+        }
+      ];
+    } else {
+      return [];
+    }
   }
 
   function getTooltip(node) {
@@ -156,7 +173,7 @@ const BudgetExpense = () => {
   
   return(
     <div style={{
-      height: 500, 
+      height: handleDivHeight(), 
       fontWeight: 'bold', 
       display: 'flex', 
       flexDirection: 'column', 
@@ -169,8 +186,14 @@ const BudgetExpense = () => {
       <ResponsivePie
         data={data}
         // valueFormat='>-0,.2f'
-        valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 28, bottom: 100, right: handleMargins(), left: handleMargins() }}
+        valueFormat={val => {
+          if (val / total * 100 < 4) {
+            return ""
+          } else {
+            return `${(val / total * 100).toFixed(1)}%`
+          }
+        }}
+        margin={{ top: 28, bottom: handleYMargins(), right: handleXMargins(), left: handleXMargins() }}
         innerRadius={0.5}
         startAngle={-200}
         endAngle={160}
@@ -180,7 +203,6 @@ const BudgetExpense = () => {
         colors={{ datum: 'data.color' }}
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
-        //enableArcLinkLabels={handleArcLinkLabels()}
         enableArcLinkLabels={handleArcLinkLabels()}
         arcLinkLabelsSkipAngle={0}
         arcLinkLabelsTextColor="#333333"
@@ -194,6 +216,7 @@ const BudgetExpense = () => {
           textColor: 'black'
         }}
         tooltip={node => getTooltip(node)}
+        legends={handleLegend()}
       />
     </div>
   )

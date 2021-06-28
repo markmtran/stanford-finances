@@ -147,6 +147,12 @@ body {
 	margin-top: 60px;
 }
 
+@media (max-width: 750px) {
+	#budget-graphic-div {
+		background-image: none;
+	}
+}
+
 .budget-titles {
 	font-size: 24px;
 }

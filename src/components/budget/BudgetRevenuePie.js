@@ -10,7 +10,30 @@ const BudgetRevenue = () => {
       "value": 1147.00,
       "color": "#bb5a52"
     },
-
+    {
+      "id": "Student Income",
+      "label": "Student Income",
+      "value": 1017.60,
+      "color": "#e27f6a"
+    },
+    {
+      "id": "Special Program Fees & Other Income",
+      "label": "Special Program Fees & Other Income",
+      "value": 578.70,
+      "color": "#e99469"
+    },
+    {
+      "id": "SLAC Sponsored Research",
+      "label": "SLAC Sponsored Research",
+      "value": 488.40,
+      "color": "#f8b972"
+    },
+    {
+      "id": "Gifts & Net Assets",
+      "label": "Gifts & Net Assets",
+      "value": 445.10,
+      "color": "#fbce73"
+    },
     {
       "id": "Investment Income",
       "label": "Investment Income",
@@ -22,30 +45,6 @@ const BudgetRevenue = () => {
       "label": "Health Care Services",
       "value": 1423.80,
       "color": "#ffc9b2"
-    },
-    {
-      "id": "Student Income",
-      "label": "Student Income",
-      "value": 1017.60,
-      "color": "#e27f6a"
-    },
-    {
-      "id": "SLAC Sponsored Research",
-      "label": "SLAC Sponsored Research",
-      "value": 488.40,
-      "color": "#f8b972"
-    },
-    {
-      "id": "Special Program Fees & Other Income",
-      "label": "Special Program Fees & Other Income",
-      "value": 578.70,
-      "color": "#e99469"
-    },
-    {
-      "id": "Gifts & Net Assets",
-      "label": "Gifts & Net Assets",
-      "value": 445.10,
-      "color": "#fbce73"
     },
   ];
   const total = 6758.2;
@@ -75,8 +74,35 @@ const BudgetRevenue = () => {
   const handleArcLinkLabels = () => {
     return width < 750 ? false : true;
   }
-  const handleMargins = () => {
-    return width < 750 ? 40 : 200
+
+  const handleDivHeight = () => {
+    return width < 750 ? 600 : 500;
+  }
+
+  const handleXMargins = () => {
+    return width < 750 ? 40 : 200;
+  }
+
+  const handleYMargins = () => {
+    return width < 750 ? 240 : 100;
+  }
+
+  const handleLegend = () => {
+    if (width < 750) {
+      return [
+        {
+          anchor: 'bottom',
+          direction: 'column',
+          translateX: 0,
+          translateY: 230,
+          itemWidth: 200,
+          itemHeight: 20,
+          itemsSpacing: 10
+        }
+      ];
+    } else {
+      return [];
+    }
   }
 
   function getTooltip(node) {
@@ -142,7 +168,7 @@ const BudgetRevenue = () => {
   
   return(
     <div style={{
-      height: 500, 
+      height: handleDivHeight(), 
       fontWeight: 'bold', 
       display: 'flex', 
       flexDirection: 'column', 
@@ -155,7 +181,7 @@ const BudgetRevenue = () => {
         sortByValue
         // valueFormat='>-$0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 28, bottom: 60, right: handleMargins(), left: handleMargins() }}
+        margin={{ top: 28, bottom: handleYMargins(), right: handleXMargins(), left: handleXMargins() }}
         innerRadius={0.5}
         startAngle={30}
         endAngle={390}
@@ -177,6 +203,7 @@ const BudgetRevenue = () => {
           fontSize: 16,
         }}
         tooltip={node => getTooltip(node)}
+        legends={handleLegend()}
       />
     </div>
   )
