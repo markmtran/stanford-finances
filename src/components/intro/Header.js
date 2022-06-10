@@ -23,7 +23,7 @@ const Header = () => {
         <Grid item xs="1"/>
         <Grid item xs="11">
           <Typography className={classes.stanfordFont} variant="h6" color="inherit">
-            Stanford | Finances
+            Stanford | Testing
           </Typography>
         </Grid>
       </Grid>
