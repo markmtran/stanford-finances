@@ -3,8 +3,8 @@ import { Grid } from "@material-ui/core";
 const IntroDesc = () => {
   return (
     <Grid className="intro-desc" container xs={12} justify="center" alignItems="center">
-      <Grid item xs={1} sm={1} md={1} lg={2}/>
-      <Grid container item xs={10} sm={10} md={10} lg={8}>
+      <Grid item xs="1" md="2"/>
+      <Grid container item xs="10" md="8">
         <Grid item xs={12}>
           <p>
             Have you ever wondered where your tuition money goes? How does Stanford pay for all those t-shirts?
@@ -17,7 +17,7 @@ const IntroDesc = () => {
           </p>
         </Grid>
       </Grid>
-      <Grid item xs={1} sm={1} md={1} lg={2}/>
+      <Grid item xs="1" md="2"/>
     </Grid>
   )
 }
