@@ -1,12 +1,11 @@
 import './App.css';
 import Budget from './components/budget/Budget';
-import Faq from './components/faq/Faq';
 import Footer from './components/footer/Footer';
 import Intro from "./components/intro/Intro";
 import Navbar from './components/nav/Navbar';
 import Resources from './components/resources/Resources';
 import Sankey from './components/sankey/Sankey';
-import Timeline from './components/timeline/Timeline';
+import Endowment from './components/endowment/Endowment';
 import Hamburger from './components/nav/Hamburger';
 import IntroDesc from './components/intro/IntroDesc';
 
@@ -20,8 +19,7 @@ const App = () => {
       <IntroDesc />
       <Budget />
       <Sankey />
-      <Timeline />
-      <Faq />
+      <Endowment />
       <Resources />
       <Footer />
     </div>

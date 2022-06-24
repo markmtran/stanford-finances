@@ -3,13 +3,8 @@ import timelinePic from '../timeline.svg';
 
 const TimelineDesc = () => {
   return(
-    <Grid container>
-      <Grid item xs="1" />
-      <Grid item xs="11">
-      </Grid>
-
-      <Grid item xs="1" md="2"/>
-      <Grid item xs="10" md="8">
+    <Grid container justifyContent="center">
+      <Grid item xs="12" md="8" justifyContent="center">
       
       <h3 class="QandA">Who makes the budget?</h3>
         <p>Now that you’ve been given a couple perspectives on how stanford’s budget works, 
@@ -18,8 +13,7 @@ const TimelineDesc = () => {
 
       </Grid>
 
-      <Grid item xs="1" md="2"/>
-    <img src={timelinePic} className="endowment" alt="Budget Timeline" />
+      <img src={timelinePic} className="endowment" alt="Budget Timeline" />
     </Grid>
 
   );

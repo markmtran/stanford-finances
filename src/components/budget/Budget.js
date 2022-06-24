@@ -1,6 +1,7 @@
 import BudgetDesc from "./BudgetDesc";
 import BudgetRevenue from "./BudgetRevenuePie";
 import BudgetExpense from "./BudgetExpensePie";
+import TimelineDesc from "./TimelineDesc";
 import { useEffect, useState } from "react";
 
 const Budget = () => {
@@ -27,7 +28,7 @@ const Budget = () => {
   }
   const { width } = useWindowDimensions();
   const divHeight = () => {
-    return width < 750 ? 50 : 200;
+    return width < 750 ? 150 : 200;
   }
 
   return(
@@ -37,6 +38,9 @@ const Budget = () => {
         <BudgetRevenue />
         <div style={{height: divHeight()}} />
         <BudgetExpense />
+      </div>
+      <div id="timeline-div">
+        <TimelineDesc />
       </div>
     </div>
     
