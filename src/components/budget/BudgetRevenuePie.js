@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { ResponsivePie } from '@nivo/pie';
-import { TooltipWrapper } from '@nivo/tooltip';
 
 const BudgetRevenue = () => {
   const data = [
@@ -10,30 +9,7 @@ const BudgetRevenue = () => {
       "value": 1147.00,
       "color": "#bb5a52"
     },
-    {
-      "id": "Student Income",
-      "label": "Student Income",
-      "value": 1017.60,
-      "color": "#e27f6a"
-    },
-    {
-      "id": "Special Program Fees & Other Income",
-      "label": "Special Program Fees & Other Income",
-      "value": 578.70,
-      "color": "#e99469"
-    },
-    {
-      "id": "SLAC Sponsored Research",
-      "label": "SLAC Sponsored Research",
-      "value": 488.40,
-      "color": "#f8b972"
-    },
-    {
-      "id": "Gifts & Net Assets",
-      "label": "Gifts & Net Assets",
-      "value": 445.10,
-      "color": "#fbce73"
-    },
+
     {
       "id": "Investment Income",
       "label": "Investment Income",
@@ -45,6 +21,30 @@ const BudgetRevenue = () => {
       "label": "Health Care Services",
       "value": 1423.80,
       "color": "#ffc9b2"
+    },
+    {
+      "id": "Student Income",
+      "label": "Student Income",
+      "value": 1017.60,
+      "color": "#e27f6a"
+    },
+    {
+      "id": "SLAC Sponsored Research",
+      "label": "SLAC Sponsored Research",
+      "value": 488.40,
+      "color": "#f8b972"
+    },
+    {
+      "id": "Special Program Fees & Other Income",
+      "label": "Special Program Fees & Other Income",
+      "value": 578.70,
+      "color": "#e99469"
+    },
+    {
+      "id": "Gifts & Net Assets",
+      "label": "Gifts & Net Assets",
+      "value": 445.10,
+      "color": "#fbce73"
     },
   ];
   const total = 6758.2;
@@ -74,114 +74,63 @@ const BudgetRevenue = () => {
   const handleArcLinkLabels = () => {
     return width < 750 ? false : true;
   }
-
-  const handleDivHeight = () => {
-    return width < 750 ? 600 : 500;
-  }
-
-  const handleXMargins = () => {
-    return width < 750 ? 40 : 200;
-  }
-
-  const handleYMargins = () => {
-    return width < 750 ? 240 : 100;
-  }
-
-  const handleLegend = () => {
-    if (width < 750) {
-      return [
-        {
-          anchor: 'bottom',
-          direction: 'column',
-          translateX: 0,
-          translateY: 230,
-          itemWidth: 200,
-          itemHeight: 20,
-          itemsSpacing: 10
-        }
-      ];
-    } else {
-      return [];
-    }
+  const handleMargins = () => {
+    return width < 750 ? 40 : 200
   }
 
   function getTooltip(node) {
     let title = node.datum.id;
-    let val = node.datum.value;
     let desc = "";
-    let anchorSide = "left";
-    let x = 0;
-    let y = 0;
     switch(title) {
       case "Gifts & Net Assets":
         desc = "Expendable gifts are donations that are immediately available for purposes specified by the donor. Net assets released from restrictions include cash payments on gift pledges made in prior years, as well as pending gifts whose designation has been determined.";
-        anchorSide = "bottom"
-        y = 15;
         break;
       case "University-sponsored Research":
         desc = "This includes revenue from federally sponsored and non-federally sponsored research, excluding SLAC.";
-        anchorSide = "right"
         break;
       case "Investment Income":
         desc = "Stanford has a ~$29B endowment, which is composed of donations and land that the university owns. The Stanford Management Company invests the endowment on behalf of the university. A portion of the interest earned is used to fund the university budget. The rest of the interest earned is reinvested back into the endowment. The goal of the endowment is to fund the university in perpetuity.";
-        anchorSide = "left"
         break;
       case "Special Program Fees & Other Income":
         desc = "This revenue source is a collection of revenue streams that includes executive education, industrial affiliate,, pre-collegiate, and professional certificate fees; travel/study programs fees; technology licensing and patent income; as well as rental income from Stanford West, Colonnade, and Welch Road apartments. It also includes revenue from athletics (e.g. ticket sales and broadcast fees) and revenue from conference and symposium events.";
-        anchorSide = "right"
         break;
       case "Health Care Services":
         desc = "This revenue mostly comes from payments from the hospitals to the School of Medicine (SOM) for faculty physician services. The SOM “loans” faculty physicians to the hospital for clinical work. The hospitals reimburse the SOM, which pays the salaries of faculty physicians. Health care services revenue has been the fastest growing element of the Consolidated Budget over the past 15 years, with a compound annual growth rate of 11%.";
-        anchorSide = "top"
-        y = 0;
         break;
       case "Student Income":
         desc = "This includes all revenue the university receives from tuition and room and board payments.";
-        anchorSide = "right"
         break;
       case "SLAC Sponsored Research":
         desc = "This includes revenue from federally sponsored and non-federally sponsored research at the SLAC National Accelerator Laboratory, a research and development center for the Dept. of Energy.";
-        anchorSide = "bottom"
-        y = 15;
         break;
       default:
         break;
     }
 
-    title = width < 750 ? node.datum.id + `, $${val.toFixed(2)}: ` : `$${val.toFixed(2)}: `;
+    title = width < 750 ? node.datum.id + ": " : "";
 
     return (
-      <TooltipWrapper anchor={anchorSide} position={[x, y]}>
-        <div style={{backgroundColor: 'white', 
-                    borderRadius: 2, 
-                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
-                    width: 320,
-                    fontSize: 16,
-                    fontWeight: 'normal'}}>
-          <div style={{padding: 12}}>
-            <span><b>{title}</b>{desc}</span>
-          </div>
+      <div style={{backgroundColor: 'white', 
+                   borderRadius: 2, 
+                   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
+                   width: 320,
+                   fontSize: 16,
+                   fontWeight: 'normal'}}>
+        <div style={{padding: 12}}>
+          <span><b>{title}</b>{desc}</span>
         </div>
-      </TooltipWrapper>
+      </div>
     )
   }
   
   return(
-    <div style={{
-      height: handleDivHeight(), 
-      fontWeight: 'bold', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      justifyContent: 'center', 
-      alignItems: 'center'
-    }}>
-      <h2 class="budget-titles">Budget Revenues (Total: $6,758.2 million)</h2>
+    <div style={{height: 500, fontWeight: 'bold'}}>
       <ResponsivePie
         data={data}
         sortByValue
         // valueFormat='>-$0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        margin={{ top: 28, bottom: handleYMargins(), right: handleXMargins(), left: handleXMargins() }}
+        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}
         endAngle={390}
@@ -200,10 +149,9 @@ const BudgetRevenue = () => {
         arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', 3 ] ] }}
         theme={{
           fontFamily: "Source Sans Pro, sans",
-          fontSize: 16,
+          fontSize: 18,
         }}
         tooltip={node => getTooltip(node)}
-        legends={handleLegend()}
       />
     </div>
   )

@@ -5,11 +5,13 @@ const BudgetDesc = () => {
     <Grid container>
       <Grid item xs="1" />
       <Grid item xs="11">
-        <h1 class="header-margin" >Stanford's Budget</h1>
+        <h1 class="header-margin" >The Budget</h1>
       </Grid>
       
       <Grid item xs="1" md="2" />
-      <Grid item xs="10" md="8">
+      <Grid item xs="10" md="8" justify="center">
+      
+      <h3 class="QandA">Show me the money! </h3>
         <p>
           In order to understand Stanford’s finances, 
           first we have to look at where the money comes from and where it goes. 
@@ -20,7 +22,7 @@ const BudgetDesc = () => {
           Hover over or tap (for mobile) each revenue/expense for more information!
         </p>
         <p style={{fontSize: 14}}>
-          <i>*Note: Dollar amounts are in millions of dollars.</i>
+          <i>*Note: The following values are in millions of dollars and represent the state of the budget in 2020. </i>
         </p>
       </Grid>
       <Grid item xs="1" md="2" />
