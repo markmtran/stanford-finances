@@ -4,7 +4,7 @@ import timelinePic from '../timeline.svg';
 const TimelineDesc = () => {
   return(
     <Grid container justifyContent="center">
-      <Grid item xs="12" md="8" justifyContent="center">
+      <Grid item xs="10" md="8" justifyContent="center">
       
       <h3 class="QandA">Who makes the budget?</h3>
         <p>Now that you’ve been given a couple perspectives on how stanford’s budget works, 
