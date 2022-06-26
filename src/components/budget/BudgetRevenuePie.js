@@ -6,45 +6,51 @@ const BudgetRevenue = () => {
     {
       "id": "University-sponsored Research",
       "label": "University-sponsored Research",
-      "value": 1147.00,
-      "color": "#bb5a52"
+      "value": 16,
+      "color": "#709b5b"
     },
 
     {
-      "id": "Investment Income",
-      "label": "Investment Income",
-      "value": 1657.60,
-      "color": "#f6b792"
+      "id": "Endowment Income",
+      "label": "Endowment Income",
+      "value": 21,
+      "color": "#7bb261"
     },
     {
       "id": "Health Care Services",
       "label": "Health Care Services",
-      "value": 1423.80,
-      "color": "#ffc9b2"
+      "value": 23,
+      "color": "#5e9968"
     },
     {
       "id": "Student Income",
       "label": "Student Income",
-      "value": 1017.60,
-      "color": "#e27f6a"
+      "value": 14,
+      "color": "#b3c274"
     },
     {
       "id": "SLAC Sponsored Research",
       "label": "SLAC Sponsored Research",
-      "value": 488.40,
-      "color": "#f8b972"
+      "value": 7,
+      "color": "#d6e594"
     },
     {
-      "id": "Special Program Fees & Other Income",
-      "label": "Special Program Fees & Other Income",
-      "value": 578.70,
-      "color": "#e99469"
+      "id": "Other Investment Income",
+      "label": "Other Investment Income",
+      "value": 5,
+      "color": "#daedd0"
     },
     {
       "id": "Gifts & Net Assets",
       "label": "Gifts & Net Assets",
-      "value": 445.10,
-      "color": "#fbce73"
+      "value": 7,
+      "color": "#b2e18d"
+    },
+    {
+      "id": "Other Income",
+      "label": "Other Income",
+      "value": 7,
+      "color": "#9cd0a5"
     },
   ];
   const total = 6758.2;
@@ -88,11 +94,11 @@ const BudgetRevenue = () => {
       case "University-sponsored Research":
         desc = "This includes revenue from federally sponsored and non-federally sponsored research, excluding SLAC.";
         break;
-      case "Investment Income":
+      case "Endowment Income":
         desc = "Stanford has a ~$29B endowment, which is composed of donations and land that the university owns. The Stanford Management Company invests the endowment on behalf of the university. A portion of the interest earned is used to fund the university budget. The rest of the interest earned is reinvested back into the endowment. The goal of the endowment is to fund the university in perpetuity.";
         break;
-      case "Special Program Fees & Other Income":
-        desc = "This revenue source is a collection of revenue streams that includes executive education, industrial affiliate,, pre-collegiate, and professional certificate fees; travel/study programs fees; technology licensing and patent income; as well as rental income from Stanford West, Colonnade, and Welch Road apartments. It also includes revenue from athletics (e.g. ticket sales and broadcast fees) and revenue from conference and symposium events.";
+      case "Other Investment Income":
+        desc = "Most of this is something called the Expendable Funds Pool (EFP). Most of the EFP is invested like the endowment, but part of it is invested in cash assets in case the university needs it on short notice.";
         break;
       case "Health Care Services":
         desc = "This revenue mostly comes from payments from the hospitals to the School of Medicine (SOM) for faculty physician services. The SOM “loans” faculty physicians to the hospital for clinical work. The hospitals reimburse the SOM, which pays the salaries of faculty physicians. Health care services revenue has been the fastest growing element of the Consolidated Budget over the past 15 years, with a compound annual growth rate of 11%.";
@@ -102,6 +108,9 @@ const BudgetRevenue = () => {
         break;
       case "SLAC Sponsored Research":
         desc = "This includes revenue from federally sponsored and non-federally sponsored research at the SLAC National Accelerator Laboratory, a research and development center for the Dept. of Energy.";
+        break;
+      case "Other Income":
+        desc = "This revenue stream includes executive education, conferences, athletics, and patent income.";
         break;
       default:
         break;
@@ -129,7 +138,8 @@ const BudgetRevenue = () => {
         data={data}
         sortByValue
         // valueFormat='>-$0,.2f'
-        valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
+        // valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
+        valueFormat={val => `${val}%`}
         margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}
