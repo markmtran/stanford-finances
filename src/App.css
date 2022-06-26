@@ -152,11 +152,12 @@ body {
 
 /* Budget CSS */
 #budget-graphic-div {
-	background-image: url('components/budget/budget-graphic-background.png');
+	background-image: url('components/budget/budget-bg.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: auto 700px;
 	margin-top: 60px;
+	margin-bottom: 60px;
 }
 
 /* @media (min-width: 750px) {

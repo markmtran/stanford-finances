@@ -6,54 +6,54 @@ const BudgetRevenue = () => {
     {
       "id": "University-sponsored Research",
       "label": "University-sponsored Research",
-      "value": 16,
+      "value": 1304.560,
       "color": "#709b5b"
     },
 
     {
       "id": "Endowment Income",
       "label": "Endowment Income",
-      "value": 21,
+      "value": 1712.235,
       "color": "#7bb261"
     },
     {
       "id": "Health Care Services",
       "label": "Health Care Services",
-      "value": 23,
+      "value": 1875.305,
       "color": "#5e9968"
     },
     {
       "id": "Student Income",
       "label": "Student Income",
-      "value": 14,
+      "value": 1141.490,
       "color": "#b3c274"
     },
     {
       "id": "SLAC Sponsored Research",
       "label": "SLAC Sponsored Research",
-      "value": 7,
+      "value": 570.745,
       "color": "#d6e594"
     },
     {
       "id": "Other Investment Income",
       "label": "Other Investment Income",
-      "value": 5,
+      "value": 407.675,
       "color": "#daedd0"
     },
     {
       "id": "Gifts & Net Assets",
       "label": "Gifts & Net Assets",
-      "value": 7,
+      "value": 570.745,
       "color": "#b2e18d"
     },
     {
       "id": "Other Income",
       "label": "Other Income",
-      "value": 7,
+      "value": 570.745,
       "color": "#9cd0a5"
     },
   ];
-  const total = 6758.2;
+  const total = 8153.5;
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -87,6 +87,7 @@ const BudgetRevenue = () => {
   function getTooltip(node) {
     let title = node.datum.id;
     let desc = "";
+    let amount = node.datum.value.toFixed(1).toString();
     switch(title) {
       case "Gifts & Net Assets":
         desc = "Expendable gifts are donations that are immediately available for purposes specified by the donor. Net assets released from restrictions include cash payments on gift pledges made in prior years, as well as pending gifts whose designation has been determined.";
@@ -116,7 +117,7 @@ const BudgetRevenue = () => {
         break;
     }
 
-    title = width < 750 ? node.datum.id + ": " : "";
+    title = width < 750 ? node.datum.id + ` ($${amount}M): ` : `$${amount}M: `;
 
     return (
       <div style={{backgroundColor: 'white', 
@@ -133,14 +134,15 @@ const BudgetRevenue = () => {
   }
   
   return(
-    <div style={{height: 500, fontWeight: 'bold'}}>
+    <div style={{height: 480, fontWeight: 'bold', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+      <h2>Revenue: $8,153.5 Million</h2>
       <ResponsivePie
         data={data}
         sortByValue
         // valueFormat='>-$0,.2f'
-        // valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
-        valueFormat={val => `${val}%`}
-        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
+        valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
+        // valueFormat={val => `${val}%`}
+        margin={{ top: 50, bottom: 80, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={30}
         endAngle={390}

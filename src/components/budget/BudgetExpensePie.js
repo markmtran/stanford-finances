@@ -116,25 +116,27 @@ const BudgetExpense = () => {
   function getTooltip(node) {
     let title = node.datum.id;
     let desc = "";
+    let amount = node.datum.value.toFixed(1).toString();
     switch(title) {
       case "Administrative":
         desc = "This budget item includes all of the divisions at Stanford necessary for the institution to function but aren’t directly involved in the academic mission. It includes everything from the General Counsel’s Office to Student Affairs to The President and Provost’s Offices. ";
+        title = width < 750 ? node.datum.id + ` ($${amount}M): ` : `$${amount}M: `;
         break;
       case "Auxiliary":
         desc = "This budget item consists of Athletics and Residential & Dining Enterprises. In normal years (i.e. non-COVID), both of these auxiliaries function as (nearly) self-sustaining operations which provide important services for the university.";
+        title = width < 750 ? node.datum.id + ` ($${amount}M): ` : `$${amount}M: `;
         break;
       default:
-        desc = title;
+        desc = "";
+        title = `$${amount}M`
         break;
     }
-
-    title = width < 750 ? node.datum.id + ": " : "";
 
     return (
       <div style={{backgroundColor: 'white', 
                    borderRadius: 2, 
                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09)',
-                   width: 320,
+                   maxWidth: 320,
                    fontSize: 16,
                    fontWeight: 'normal'}}>
         <div style={{padding: 12}}>
@@ -145,13 +147,13 @@ const BudgetExpense = () => {
   }
   
   return(
-    <div style={{height: 500, fontWeight: 'bold'}}>
+    <div style={{height: 480, fontWeight: 'bold', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
       <ResponsivePie
         data={data}
         // valueFormat='>-0,.2f'
         valueFormat={val => `${(val / total * 100).toFixed(1)}%`}
         // valueFormat={val => `${val}%`}
-        margin={{ top: 50, bottom: 50, right: handleMargins(), left: handleMargins() }}
+        margin={{ top: 80, bottom: 50, right: handleMargins(), left: handleMargins() }}
         innerRadius={0.5}
         startAngle={-200}
         endAngle={160}
@@ -164,6 +166,7 @@ const BudgetExpense = () => {
         enableArcLinkLabels={handleArcLinkLabels()}
         arcLinkLabelsSkipAngle={0}
         arcLinkLabelsTextColor="#333333"
+        arcLinkLabelsDiagonalLength={24}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabelsSkipAngle={0}
@@ -175,6 +178,7 @@ const BudgetExpense = () => {
         }}
         tooltip={node => getTooltip(node)}
       />
+      <h2>Expenses: $7,708.6 Million</h2>
     </div>
   )
 }
