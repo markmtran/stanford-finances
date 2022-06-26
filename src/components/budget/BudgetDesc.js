@@ -22,7 +22,7 @@ const BudgetDesc = () => {
           Hover over or tap (for mobile) each revenue/expense for more information!
         </p>
         <p style={{fontSize: 14}}>
-          <i>*Note: The following values are in millions of dollars and represent the state of the budget in 2020. </i>
+          <i>*Note: The following values are in millions of dollars and represent the state of the budget for 2022-2023. </i>
         </p>
       </Grid>
       <Grid item xs="1" md="2" />
