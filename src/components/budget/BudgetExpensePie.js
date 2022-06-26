@@ -128,7 +128,7 @@ const BudgetExpense = () => {
         break;
       default:
         desc = "";
-        title = `$${amount}M`
+        title = width < 750 ? node.datum.id + `: $${amount}M` : `$${amount}M`;
         break;
     }
 
